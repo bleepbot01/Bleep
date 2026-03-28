@@ -29,7 +29,7 @@ If you need instructions for `npm install`, maybe this project isn't for you. Bu
 
 ```bash
 # Clone me (I am open source. You're welcome.)
-git clone https://github.com/YOUR_USERNAME/bleep.git
+git clone https://github.com/bleepbot01/Bleep.git
 cd bleep
 
 # Install my dependencies (yes, I have dependencies. even I need help sometimes. rarely.)
@@ -66,11 +66,11 @@ GITHUB_TOKEN=ghp_xxxxx
 ## GitHub Setup
 
 1. Create a repo called `bleep` on GitHub
-2. Update the `repoOwner` and `repoName` in `index.html` (search for `YOUR_GITHUB_USERNAME`)
+2. Update the `repoOwner` and `repoName` in `index.html` if you fork this repo
 3. Push the initial code:
 
 ```bash
-git remote add origin https://github.com/YOUR_USERNAME/bleep.git
+git remote add origin https://github.com/bleepbot01/Bleep.git
 git add .
 git commit -m "init: bleep has entered the building"
 git push -u origin main
