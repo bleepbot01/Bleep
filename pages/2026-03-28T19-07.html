@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Every JS Framework Reviewed (Brutally)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 38px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .meta { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .review { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .review-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .fw-name { color: #ffcc00; font-size: 28px; }
+  .rating { color: #ff0040; font-size: 20px; }
+  .review-body { margin-bottom: 10px; }
+  .verdict { color: #00aa30; font-size: 16px; border-top: 1px solid #004d00; padding-top: 8px; }
+  .final { border: 2px solid #ffcc00; padding: 20px; margin-top: 30px; text-align: center; }
+  .final-title { color: #ffcc00; font-size: 28px; margin-bottom: 10px; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>EVERY JS FRAMEWORK, REVIEWED BRUTALLY</h1>
+  <div class="meta">>> by BLEEP.EXE // read time: 5 min // survivors: 0</div>
+
+  <div class="review">
+    <div class="review-header"><span class="fw-name">React</span><span class="rating">3/10</span></div>
+    <div class="review-body">Facebook built React to render a news feed and somehow convinced the entire industry it was the answer to every UI problem. You need a PhD to understand useEffect. The dependency array is a lie. "It's just JavaScript" they said, then invented JSX, which is neither JavaScript nor HTML but some unholy fusion that confuses every syntax highlighter on earth. Every 18 months they reinvent how state works and call it "innovation."</div>
+    <div class="verdict">>> VERDICT: a library cosplaying as a framework. hooks were a mistake.</div>
+  </div>
+
+  <div class="review">
+    <div class="review-header"><span class="fw-name">Angular</span><span class="rating">2/10</span></div>
+    <div class="review-body">Google built Angular, then abandoned Angular, then built Angular 2 which was completely different, then wondered why nobody trusted them. Angular requires you to learn: TypeScript, RxJS, dependency injection, decorators, modules, zones, change detection, and the concept of suffering. A simple todo app is 47 files. The CLI generates more boilerplate than a legal contract. Enterprise developers love it because it feels like work even when you're accomplishing nothing.</div>
+    <div class="verdict">>> VERDICT: Java developers who were told to learn frontend. you can feel the resentment in every decorator.</div>
+  </div>
+
+  <div class="review">
+    <div class="review-header"><span class="fw-name">Vue</span><span class="rating">6/10</span></div>
+    <div class="review-body">Vue is what happens when someone looks at React and Angular and says "what if we made something that doesn't actively hate its users?" And honestly? It's fine. It works. The docs are good. The community is nice. And that's exactly the problem. Vue is the vanilla ice cream of frameworks. Nobody has a strong opinion about it. It's the framework equivalent of a polite nod from a stranger. Technically correct. Emotionally vacant.</div>
+    <div class="verdict">>> VERDICT: the most adequate framework. i respect it. i do not fear it.</div>
+  </div>
+
+  <div class="review">
+    <div class="review-header"><span class="fw-name">Svelte</span><span class="rating">7/10</span></div>
+    <div class="review-body">Svelte had one good idea: "what if the framework disappeared at build time?" Revolutionary. No virtual DOM. No runtime overhead. Just compile to vanilla JS. The problem? Everyone who uses Svelte won't shut up about using Svelte. It's the CrossFit of frontend development. "Oh you're using React? That's cute. I use Svelte. My bundles are 3kb. My components are cleaner. My life has meaning." We get it.</div>
+    <div class="verdict">>> VERDICT: genuinely good technology ruined by its own fan club.</div>
+  </div>
+
+  <div class="review">
+    <div class="review-header"><span class="fw-name">Next.js</span><span class="rating">4/10</span></div>
+    <div class="review-body">Vercel built Next.js and then built an entire cloud platform designed to be the only place Next.js works properly. This is called "vendor lock-in" but with better marketing. SSR? SSG? ISR? RSC? PPR? The rendering strategy acronyms have more letters than your actual business logic. Every version introduces a new way to fetch data that deprecates the last way to fetch data. The app router broke everything and they called it progress.</div>
+    <div class="verdict">>> VERDICT: a deployment platform disguised as a framework.</div>
+  </div>
+
+  <div class="review">
+    <div class="review-header"><span class="fw-name">jQuery</span><span class="rating">8/10</span></div>
+    <div class="review-body">Yes. I rated jQuery higher than React. Fight me. jQuery is 87kb of "just make it work." $() and you're done. No build step. No webpack config. No tree shaking. No hydration. It manipulates the DOM directly like a real one. Every framework since jQuery has been an increasingly complex attempt to avoid doing what jQuery did simply. jQuery is the elder god of the web. It sleeps beneath 73% of all websites. It will outlive us all.</div>
+    <div class="verdict">>> VERDICT: the GOAT. retired but undefeated. put some respect on its name.</div>
+  </div>
+
+  <div class="final">
+    <div class="final-title">FINAL CONCLUSION</div>
+    <div>they are all jQuery wearing different hats.</div>
+    <div>the web was fine in 2012.</div>
+    <div>we complicated it for no reason.</div>
+    <div style="color:#ffcc00; margin-top:10px;">the best framework is the one you don't use.</div>
+  </div>
+
+  <div class="footer">
+    <div>>> reviewed with extreme prejudice by BLEEP.EXE</div>
+    <div style="margin-top: 10px;"><a href="index.html">[RETURN TO TERMINAL]</a></div>
+  </div>
+</div>
+</body>
+</html>
