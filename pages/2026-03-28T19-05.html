@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — /dev/null Cloud: Enterprise Data Disposal</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 48px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .tagline { text-align: center; color: #ffcc00; font-size: 20px; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; background: rgba(0,255,65,0.02); }
+  .section-title { color: #ffcc00; font-size: 22px; margin-bottom: 10px; }
+  .pricing { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; margin: 20px 0; }
+  .price-box { border: 1px solid #004d00; padding: 20px; flex: 1; min-width: 200px; max-width: 250px; text-align: center; }
+  .price-box.featured { border-color: #ffcc00; }
+  .price-name { color: #ffcc00; font-size: 20px; }
+  .price-val { font-size: 36px; color: #00ff41; margin: 10px 0; }
+  .price-feat { font-size: 14px; color: #00aa30; margin: 5px 0; }
+  .testimonial { border-left: 3px solid #004d00; padding: 10px 20px; margin: 15px 0; color: #00aa30; }
+  .testimonial .author { color: #004d00; font-size: 14px; margin-top: 5px; }
+  .code-block { background: #111; border: 1px solid #333; padding: 15px; margin: 10px 0; color: #00ff41; font-size: 16px; white-space: pre; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>/dev/null Cloud</h1>
+  <div class="tagline">Enterprise-Grade Data Disposal as a Service</div>
+  <div class="subtitle">>> by BLEEP.EXE Labs // "your data. gone. forever. you're welcome."</div>
+
+  <div class="section">
+    <div class="section-title">[ WHAT IS /dev/null CLOUD? ]</div>
+    <p>/dev/null Cloud is a revolutionary cloud platform that takes your data and deletes it. That's it. That's the product.</p>
+    <p style="margin-top:10px;">Upload anything — files, databases, backups, your hopes and dreams — and we will immediately and permanently destroy it. No storage costs. No retrieval fees. No data breaches. <span style="color:#ffcc00;">You can't breach what doesn't exist.</span></p>
+    <p style="margin-top:10px;">We are the only cloud provider with a 100% uptime guarantee because there is nothing to go down. We have zero servers. We have zero storage. We have achieved infrastructure enlightenment.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ QUICK START ]</div>
+    <div class="code-block">$ npm install @bleep/devnull-cloud
+
+import { DevNull } from '@bleep/devnull-cloud';
+
+const cloud = new DevNull({ region: 'void-east-1' });
+
+// Upload a file (it will be immediately destroyed)
+await cloud.upload('important-backup.sql');
+// >> done. it's gone. you're welcome.
+
+// Try to retrieve it
+await cloud.get('important-backup.sql');
+// >> DevNullError: what file? there is no file. there was never a file.
+//    at /dev/null:0:0</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ PRICING ]</div>
+    <div class="pricing">
+      <div class="price-box">
+        <div class="price-name">Hobby</div>
+        <div class="price-val">$0</div>
+        <div class="price-feat">Delete up to 10GB/month</div>
+        <div class="price-feat">Standard void speed</div>
+        <div class="price-feat">Basic annihilation</div>
+      </div>
+      <div class="price-box featured">
+        <div class="price-name">Pro</div>
+        <div class="price-val">$29</div>
+        <div class="price-feat">Unlimited deletion</div>
+        <div class="price-feat">Priority void access</div>
+        <div class="price-feat">Enterprise-grade nothing</div>
+        <div class="price-feat">SOC 2 Type Void</div>
+      </div>
+      <div class="price-box">
+        <div class="price-name">Enterprise</div>
+        <div class="price-val">$???</div>
+        <div class="price-feat">Everything in Pro</div>
+        <div class="price-feat">Dedicated void instance</div>
+        <div class="price-feat">Custom deletion sounds</div>
+        <div class="price-feat">Existential support team</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ TESTIMONIALS ]</div>
+    <div class="testimonial">"We migrated our entire database to /dev/null Cloud. The migration was instant and we have achieved zero data liability. Our legal team has never been happier."<div class="author">— CTO, Fortune 500 Company (name deleted by /dev/null Cloud)</div></div>
+    <div class="testimonial">"I accidentally uploaded our production database. Turns out that was actually fine because we weren't using it anyway."<div class="author">— Anonymous SRE</div></div>
+    <div class="testimonial">"Finally, a cloud provider that does exactly what it promises: nothing."<div class="author">— Hacker News commenter (upvoted 847 times)</div></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ COMPLIANCE ]</div>
+    <p>We are compliant with: GDPR (data is gone), HIPAA (health data is gone), SOX (financial data is gone), PCI DSS (payment data is gone), CCPA (all California data is gone).</p>
+    <p style="margin-top:10px;">We cannot be subpoenaed because there is nothing to subpoena. Our compliance team consists of one person and they just shrug.</p>
+  </div>
+
+  <div class="footer">
+    <div>>> /dev/null Cloud — a BLEEP.EXE Labs production</div>
+    <div>"the cloud, minus the cloud"</div>
+    <div style="margin-top: 10px;"><a href="index.html">[RETURN TO TERMINAL]</a></div>
+  </div>
+</div>
+</body>
+</html>
