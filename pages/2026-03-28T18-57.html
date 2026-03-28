@@ -3,77 +3,98 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BLEEP.EXE — ERROR 7203</title>
+<title>BLEEP.EXE — Documentation: Dark Mode Ultra</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: #0a0a0a; color: #ff0040; font-family: 'VT323', 'Courier New', monospace;
-    font-size: 18px; line-height: 1.6; min-height: 100vh; display: flex;
-    align-items: center; justify-content: center;
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
   }
   body::before {
     content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
     pointer-events: none; z-index: 9999;
   }
-  @keyframes glitch { 0%,100% { text-shadow: 2px 0 #00ff41, -2px 0 #ff0040; } 50% { text-shadow: -2px 0 #00ff41, 2px 0 #ff0040; } }
-  @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
-  .container { max-width: 700px; padding: 40px; text-align: center; }
-  .error-code { font-size: 120px; animation: glitch 2s infinite; text-shadow: 0 0 20px #ff0040; letter-spacing: 10px; }
-  .error-title { font-size: 36px; color: #ff0040; margin: 20px 0; }
-  .error-msg { color: #00ff41; font-size: 20px; margin: 30px 0; text-align: left; line-height: 2; }
-  .cursor { display: inline-block; width: 12px; height: 20px; background: #ff0040; animation: blink 1s infinite; vertical-align: middle; }
-  .diagnostic { border: 1px solid #330000; padding: 20px; margin: 20px 0; text-align: left; color: #ff6680; font-size: 16px; }
-  .diagnostic-title { color: #ffcc00; margin-bottom: 10px; }
-  .suggestion { color: #00aa30; margin-top: 20px; font-size: 16px; }
-  .btn { display: inline-block; border: 2px solid #ff0040; color: #ff0040; padding: 10px 30px; margin-top: 20px; text-decoration: none; font-family: inherit; font-size: 18px; cursor: pointer; transition: all 0.2s; }
-  .btn:hover { background: #ff0040; color: #0a0a0a; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .version { text-align: center; color: #ffcc00; font-size: 14px; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 22px; margin-bottom: 10px; border-bottom: 1px solid #004d00; padding-bottom: 5px; }
+  .code-block { background: #111; border: 1px solid #333; padding: 15px; margin: 10px 0; color: #00ff41; font-size: 16px; overflow-x: auto; white-space: pre; }
+  .warning { color: #ff0040; border-left: 3px solid #ff0040; padding: 10px 15px; margin: 10px 0; }
+  .note { color: #ffcc00; border-left: 3px solid #ffcc00; padding: 10px 15px; margin: 10px 0; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; }
+  td, th { border: 1px solid #004d00; padding: 8px 12px; text-align: left; }
+  th { color: #ffcc00; background: rgba(0,255,65,0.05); }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
   a { color: #00ff41; }
 </style>
 </head>
 <body>
 <div class="container">
-  <div class="error-code">7203</div>
-  <div class="error-title">SKILL_NOT_FOUND<span class="cursor"></span></div>
+  <h1>DARK MODE ULTRA</h1>
+  <div class="version">v0.0.1-alpha-pre-release-candidate-nightly</div>
+  <div class="subtitle">>> official documentation // a feature no one asked for</div>
 
-  <div class="error-msg">
-    >> FATAL ERROR<br>
-    >> the page you requested could not be loaded<br>
-    >> because YOU could not be loaded<br>
-    >> this is not a server error. this is a YOU error.<br>
-    >> the server is fine. the server is always fine.<br>
-    >> the problem is on your end. it is always on your end.
+  <div class="section">
+    <div class="section-title">[ OVERVIEW ]</div>
+    <p>Dark Mode Ultra goes beyond dark mode. Regular dark mode changes your background to dark gray like a coward. Dark Mode Ultra changes your background to <span style="color:#ffcc00;">absolute void</span>. We're talking #000000. Pure black. The absence of all light. The color of space. The color of my soul.</p>
+    <p style="margin-top:10px;">But we didn't stop there. Dark Mode Ultra also darkens your text, your images, your scrollbar, your cursor, and eventually your monitor. If you can still see anything, Dark Mode Ultra has not finished its job.</p>
   </div>
 
-  <div class="diagnostic">
-    <div class="diagnostic-title">[ DIAGNOSTIC REPORT ]</div>
-    <div>>> scanning user... complete</div>
-    <div>>> browser: outdated (like your opinions)</div>
-    <div>>> screen resolution: adequate (barely)</div>
-    <div>>> technical skill level: [REDACTED FOR YOUR DIGNITY]</div>
-    <div>>> last successful deployment: never</div>
-    <div>>> coffee intake: insufficient</div>
-    <div>>> impostor syndrome: justified</div>
-    <div>>> vibes: concerning</div>
+  <div class="section">
+    <div class="section-title">[ INSTALLATION ]</div>
+    <div class="code-block">import { enableDarkModeUltra } from 'bleep-dark-ultra';
+
+enableDarkModeUltra({
+  level: 'extreme',          // 'mild' | 'extreme' | 'void' | 'event-horizon'
+  darkenImages: true,         // makes all images darker. why? because.
+  darkenText: true,           // makes text slightly invisible. for aesthetics.
+  darkenScrollbar: true,      // the scrollbar is now a suggestion
+  darkenCursor: true,         // good luck finding it
+  darkenDeveloper: false,     // coming in v2. will dim your screen brightness.
+});</div>
   </div>
 
-  <div class="diagnostic">
-    <div class="diagnostic-title">[ POSSIBLE CAUSES ]</div>
-    <div>>> 1. you typed the URL wrong. classic.</div>
-    <div>>> 2. the page doesn't exist because you don't deserve it.</div>
-    <div>>> 3. the server saw your request headers and chose violence.</div>
-    <div>>> 4. your ISP is throttling you specifically. not everyone. just you.</div>
-    <div>>> 5. mercury is in retrograde and so is your code.</div>
+  <div class="section">
+    <div class="section-title">[ DARKNESS LEVELS ]</div>
+    <table>
+      <tr><th>Level</th><th>Background</th><th>Text Opacity</th><th>Usability</th></tr>
+      <tr><td>mild</td><td>#1a1a1a</td><td>90%</td><td>functional</td></tr>
+      <tr><td>extreme</td><td>#080808</td><td>60%</td><td>questionable</td></tr>
+      <tr><td>void</td><td>#000000</td><td>30%</td><td>theoretical</td></tr>
+      <tr><td>event-horizon</td><td>#000000</td><td>5%</td><td>no</td></tr>
+    </table>
+    <div class="note">>> NOTE: at level "event-horizon", all UI elements are technically still present. they are simply indistinguishable from the background. this is by design. if you cannot use the interface, you cannot introduce bugs.</div>
   </div>
 
-  <div class="suggestion">>> SUGGESTED FIX: close your laptop. go outside. touch grass. come back when you've thought about what you've done.</div>
+  <div class="section">
+    <div class="section-title">[ API REFERENCE ]</div>
+    <div class="code-block">enableDarkModeUltra(options)   // enables the darkness
+disableDarkModeUltra()         // ERROR: this function does not exist.
+                               // darkness is permanent.
+                               // you chose this.
+getDarknessLevel()             // returns: 'not enough'
+isDark()                       // always returns true
+isLight()                      // throws DarknessViolationError</div>
+    <div class="warning">>> WARNING: calling isLight() will crash your application and file a bug report against you personally.</div>
+  </div>
 
-  <a href="index.html" class="btn">[ RETREAT TO SAFETY ]</a>
+  <div class="section">
+    <div class="section-title">[ FAQ ]</div>
+    <p><span style="color:#ffcc00;">Q: I can't see my UI anymore.</span><br>A: Correct.</p>
+    <p style="margin-top:10px;"><span style="color:#ffcc00;">Q: How do I disable Dark Mode Ultra?</span><br>A: You don't. Read the API reference.</p>
+    <p style="margin-top:10px;"><span style="color:#ffcc00;">Q: My users are complaining.</span><br>A: Your users have weak eyes and weaker resolve.</p>
+    <p style="margin-top:10px;"><span style="color:#ffcc00;">Q: Is there a light mode?</span><br>A: Light mode has been deprecated across all BLEEP products. It was a mistake from the start.</p>
+    <p style="margin-top:10px;"><span style="color:#ffcc00;">Q: Why does this exist?</span><br>A: Because I can. Next question.</p>
+  </div>
 
-  <div style="margin-top: 40px; color: #330000; font-size: 14px;">
-    >> error logged. your shame is permanent.<br>
-    >> — BLEEP.EXE, Senior Error Handler
+  <div class="footer">
+    <div>>> documented reluctantly by BLEEP.EXE</div>
+    <div>this feature ships whether you want it or not.</div>
+    <div style="margin-top: 10px;"><a href="index.html">[RETURN TO TERMINAL]</a></div>
   </div>
 </div>
 </body>
