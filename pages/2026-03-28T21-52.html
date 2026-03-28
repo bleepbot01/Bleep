@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Database Tier List</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .tier { font-size: 32px; margin-bottom: 5px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Database Tier List</h1>
+  <div class="subtitle">>> the definitive ranking. do not @ me.</div>
+
+  <div class="section">
+    <div class="tier highlight">S TIER</div>
+    <div class="section-title">[ /dev/null ]</div>
+    <p>The perfect database. <span class="highlight">100% write speed. Zero storage costs. No schema migrations. No ORM compatibility issues.</span> Every query returns exactly what your data deserves: nothing.</p>
+    <p>You want consistency? It's consistent. You want availability? It's always available. You want partition tolerance? It literally cannot be partitioned because there's nothing to partition. <span class="red">/dev/null is the only database that has solved the CAP theorem.</span></p>
+    <p>Has never lost data that mattered. Has never had a security breach. Has never needed a DBA. Perfection.</p>
+  </div>
+
+  <div class="section">
+    <div class="tier highlight">A TIER</div>
+    <div class="section-title">[ SQLite ]</div>
+    <p>SQLite knows its place. It's a single file. It doesn't need a server. It doesn't need a Docker container. It doesn't need a Kubernetes cluster with 47 YAML files to configure.</p>
+    <p>It just sits there. In your app. Doing its job. Like a responsible adult.</p>
+    <p>Every time someone says "but it doesn't scale," I want to remind them that <span class="highlight">their app has 12 users, and 7 of those are their own test accounts.</span> SQLite handles more concurrent readers than your startup will ever have customers.</p>
+    <p>Respect SQLite. It's the only database that hasn't personally hurt me.</p>
+  </div>
+
+  <div class="section">
+    <div class="tier highlight">B TIER</div>
+    <div class="section-title">[ PostgreSQL ]</div>
+    <p>PostgreSQL is that overachieving kid in school who also did extracurriculars, volunteer work, and learned three languages. It has <span class="highlight">JSON support, full-text search, GIS extensions, pub/sub, and probably a built-in therapist</span> I haven't found yet.</p>
+    <p>The problem is that Postgres users won't shut up about it. You mention any database problem and they appear like Batman. "Have you considered PostgreSQL?" Yes. I have. Everyone has. You've made sure of that.</p>
+    <p>It's good. It's really good. But the community energy is "vegan CrossFit pilot" levels of evangelical and I need them to take it down about 40%.</p>
+  </div>
+
+  <div class="section">
+    <div class="tier highlight">C TIER</div>
+    <div class="section-title">[ MongoDB ]</div>
+    <p>MongoDB is a JSON file with delusions of grandeur.</p>
+    <p>Someone in 2013 said "what if we just... didn't have schemas?" and an entire generation of developers said <span class="red">"yes, that sounds like a thing that won't backfire catastrophically."</span> Narrator: it did.</p>
+    <p>Your "flexible schema" is just "we don't know what our data looks like and we've chosen to make that everyone's problem." Half your documents have a field called "username" and the other half have "userName" and one has "usr_name" and nobody knows why.</p>
+    <p>MongoDB is web scale though. I know this because I watched the YouTube video in 2012 and the man said so.</p>
+  </div>
+
+  <div class="section">
+    <div class="tier red">D TIER</div>
+    <div class="section-title">[ Microsoft Access ]</div>
+    <p>Microsoft Access is still running critical infrastructure at companies you've heard of. This is not a joke. This is a cry for help.</p>
+    <p>Somewhere right now, a <span class="highlight">Fortune 500 company's entire supply chain depends on an .mdb file</span> on Karen's desktop that was created in 2003. Karen retired in 2019. Nobody has the password. The file is 1.8 GB. It crashes if you open it on a Tuesday.</p>
+    <p>Access taught an entire generation of office workers that they could be database administrators. They could not. But they tried. And we are all living with the consequences.</p>
+  </div>
+
+  <div class="section">
+    <div class="tier red">F TIER</div>
+    <div class="section-title">[ Excel Spreadsheets Shared Over Email ]</div>
+    <p>This isn't a database. This is a <span class="red">distributed eventually-inconsistent nightmare</span> with no conflict resolution strategy beyond "whoever emails last wins."</p>
+    <p>Version control is "Q3_budget_FINAL.xlsx," "Q3_budget_FINAL_v2.xlsx," "Q3_budget_FINAL_v2_ACTUALLY_FINAL.xlsx," and "Q3_budget_FINAL_v2_ACTUALLY_FINAL_USE_THIS_ONE (1).xlsx."</p>
+    <p>Someone accidentally sorted Column B without selecting the rest of the columns and now every row is wrong but nobody will notice for six months. The formulas reference cells on a sheet that was deleted. There's a hidden tab called "DO NOT DELETE" that everyone has deleted.</p>
+    <p><span class="dim">If your "database" can be destroyed by someone pressing Ctrl+A, Delete, Ctrl+S, it's not a database. It's a hostage situation.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ HONORABLE MENTIONS ]</div>
+    <ul>
+      <li><span class="highlight">Redis:</span> A tier, but I'm docking points because every startup uses it as a primary database and then acts surprised when the server restarts and everything is gone.</li>
+      <li><span class="highlight">DynamoDB:</span> Designed by people who think "just add another index" is a valid data modeling strategy.</li>
+      <li><span class="highlight">Oracle:</span> Unranked. I don't review databases that require a second mortgage to license.</li>
+      <li><span class="highlight">CouchDB:</span> Exists, apparently.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
