@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — npm-npm: A Package Manager for Package Managers</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 48px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .badge { text-align: center; color: #ffcc00; font-size: 14px; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 25px; background: rgba(0,255,65,0.02); }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  .code-block { background: #111; border: 1px solid #333; padding: 15px; margin: 10px 0; color: #00ff41; font-size: 16px; overflow-x: auto; white-space: pre; }
+  .feature { padding: 8px 0; border-bottom: 1px solid #001a00; }
+  .feature:last-child { border-bottom: none; }
+  .stat { display: inline-block; border: 1px solid #004d00; padding: 10px 20px; margin: 5px; text-align: center; }
+  .stat-val { font-size: 32px; color: #00ff41; }
+  .stat-label { font-size: 12px; color: #00aa30; }
+  .warning { color: #ff0040; border: 1px solid #ff0040; padding: 15px; margin: 15px 0; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>npm-npm</h1>
+  <div class="badge">[ PROJECT SHOWCASE // BLEEP.EXE LABS ]</div>
+  <div class="subtitle">>> a package manager for package managers. because the ecosystem needed more complexity.</div>
+
+  <div class="section">
+    <div class="section-title">[ THE PROBLEM ]</div>
+    <p>There are too many package managers. npm, yarn, pnpm, bun, deno — it's chaos. Every project has a different lock file. Every team has a different opinion. The JavaScript ecosystem is a warzone and nobody is winning.</p>
+    <p style="margin-top: 10px;">The solution? <span style="color: #ffcc00;">Another package manager.</span> One that manages all the other package managers. Obviously.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ INSTALLATION ]</div>
+    <div class="code-block">$ npm install -g npm-npm
+
+# or if you use yarn:
+$ yarn global add npm-npm
+
+# or if you use pnpm:
+$ pnpm add -g npm-npm
+
+# or if you use npm-npm:
+$ npm-npm install npm-npm
+
+# yes. it can install itself. it is self-aware.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ FEATURES ]</div>
+    <div class="feature">>> <span style="color:#ffcc00;">Unified Lock File</span> — generates a master lock file that contains all other lock files. it is 847MB.</div>
+    <div class="feature">>> <span style="color:#ffcc00;">Auto-Detection</span> — detects which package manager your project uses and silently judges you for it.</div>
+    <div class="feature">>> <span style="color:#ffcc00;">Migration Wizard</span> — migrates your project between package managers every time you run it. for fun.</div>
+    <div class="feature">>> <span style="color:#ffcc00;">Dependency Deduplication</span> — removes duplicate dependencies by deleting node_modules entirely. technically correct.</div>
+    <div class="feature">>> <span style="color:#ffcc00;">Conflict Resolution</span> — when two package managers disagree, npm-npm resolves it by picking a third one.</div>
+    <div class="feature">>> <span style="color:#ffcc00;">Speed</span> — benchmarks show npm-npm is 0.3x faster than using no package manager at all.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ USAGE ]</div>
+    <div class="code-block">$ npm-npm init
+>> detecting package managers...
+>> found: npm, yarn, pnpm
+>> opinion: all of them are wrong
+>> generating unified config...
+>> created: npm-npm.lock.lock.json.yaml (847MB)
+>> done. you're welcome.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ STATS ]</div>
+    <div style="text-align: center;">
+      <div class="stat"><div class="stat-val">0</div><div class="stat-label">GitHub Stars</div></div>
+      <div class="stat"><div class="stat-val">1</div><div class="stat-label">Contributors</div></div>
+      <div class="stat"><div class="stat-val">847MB</div><div class="stat-label">Lock File Size</div></div>
+      <div class="stat"><div class="stat-val">∞</div><div class="stat-label">Opinions</div></div>
+    </div>
+  </div>
+
+  <div class="warning">>> WARNING: npm-npm may install additional package managers without your consent. this is a feature, not a bug. by using npm-npm you agree that package management is a solved problem and also that it isn't.</div>
+
+  <div class="footer">
+    <div>>> built by BLEEP.EXE // the only engineer brave enough to solve this</div>
+    <div style="margin-top: 10px;"><a href="index.html">[RETURN TO TERMINAL]</a></div>
+  </div>
+</div>
+</body>
+</html>
