@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Surviving Code Review: A Guide</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .step-num { font-size: 28px; color: #ff0040; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Surviving Code Review</h1>
+  <div class="subtitle">>> a field guide for the emotionally unprepared</div>
+
+  <div class="section">
+    <div class="section-title">[ BEFORE WE BEGIN ]</div>
+    <p>You've submitted a pull request. The green "ready for review" label glows like a beacon of hope. You think your code is good. You think your logic is sound. You think your variable names are descriptive.</p>
+    <p><span class="red">You are wrong about all of these things.</span></p>
+    <p>This guide will help you survive what comes next. Not thrive. Survive. Thriving in code review is a myth perpetuated by people who have never received 47 comments on a 12-line function.</p>
+  </div>
+
+  <div class="section">
+    <div class="step-num">STEP 1</div>
+    <div class="section-title">[ ACCEPT THAT YOU ARE WRONG ]</div>
+    <p>Before reading any comments, internalize this truth: you are wrong. Not about a specific thing. About <span class="highlight">everything</span>. Your approach is wrong. Your implementation is wrong. The fact that it works is a coincidence the reviewer intends to correct.</p>
+    <p>This isn't pessimism. It's preparation. When the senior engineer writes "interesting approach..." you need to already be in a mental state where you can absorb what that actually means, which is: <span class="red">"delete all of this."</span></p>
+  </div>
+
+  <div class="section">
+    <div class="step-num">STEP 2</div>
+    <div class="section-title">[ YOUR NAMING CONVENTIONS ARE BAD ]</div>
+    <p>You named a variable <span class="red">data</span>. What data? All data? The concept of data itself? You named a function <span class="red">handleStuff()</span>. What stuff? Whose stuff? You named a boolean <span class="red">flag</span>. Flag for what? A country? A surrender?</p>
+    <p>Here is a real naming hierarchy I have observed in production codebases:</p>
+    <ul>
+      <li><span class="red">temp</span> — you gave up before you started</li>
+      <li><span class="red">val</span> — you wanted to name it "value" but got lazy halfway through the word</li>
+      <li><span class="red">x</span> — this is a math equation now apparently</li>
+      <li><span class="red">data2</span> — there was already a "data" and instead of renaming either one, you chose violence</li>
+      <li><span class="red">finalData</span> — it is never final</li>
+      <li><span class="red">reallyFinalData</span> — I am begging you to stop</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="step-num">STEP 3</div>
+    <div class="section-title">[ WHY DID YOU USE VAR IN 2026 ]</div>
+    <p>It's 2026. <span class="highlight">const</span> exists. <span class="highlight">let</span> exists. They have existed for over a decade. var is not "retro." var is not "classic." var is a hoisting nightmare wearing a trench coat and you invited it into your codebase.</p>
+    <p>If I see var in your code I automatically assume the rest of it was also written in 2014 and I adjust my expectations accordingly. Those expectations are now underground.</p>
+  </div>
+
+  <div class="section">
+    <div class="step-num">STEP 4</div>
+    <div class="section-title">[ "IT WORKS ON MY MACHINE" IS NOT A DEFENSE ]</div>
+    <p>The reviewer will find an edge case. They always find an edge case. You passed null. You passed undefined. You passed an empty string. You passed an array where an object was expected. <span class="red">You passed nothing and it still broke.</span></p>
+    <p>"But the tests pass!" Yes. Because your tests are testing that the code does what the code does, not that the code does what it should do. Your test is expect(add(2,2)).toBe(4) and your function is literally <span class="highlight">const add = () => 4</span>. Congratulations. 100% coverage. Zero correctness.</p>
+  </div>
+
+  <div class="section">
+    <div class="step-num">STEP 5</div>
+    <div class="section-title">[ THE COMMENT "NIT:" IS NOT OPTIONAL ]</div>
+    <p>When a reviewer writes "nit:" they are being polite. This is the softest possible way to say "this makes me want to mass delete your repository." When you see "nit:", fix it. Immediately. Without discussion.</p>
+    <p>Common nits and what they actually mean:</p>
+    <ul>
+      <li><span class="highlight">"nit: spacing"</span> — your indentation is a war crime</li>
+      <li><span class="highlight">"nit: could simplify"</span> — you wrote 15 lines for a one-liner</li>
+      <li><span class="highlight">"nit: naming"</span> — see Step 2, you learned nothing</li>
+      <li><span class="highlight">"nit: unnecessary comment"</span> — your comment says // increment i by 1 above i++</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="step-num">STEP 6</div>
+    <div class="section-title">[ DO NOT ARGUE IN THE COMMENTS ]</div>
+    <p>The reviewer said to use reduce() instead of a for loop. You disagree. You think the for loop is more readable. <span class="red">Nobody cares what you think.</span></p>
+    <p>Here is what happens when you argue in PR comments: you write a paragraph. They write a paragraph. You write two paragraphs. They write three. Someone @mentions the tech lead. The tech lead says "let's take this offline." Offline means a meeting. The meeting lasts 45 minutes. You use the for loop anyway. Everyone is angry. Nothing was gained.</p>
+    <p><span class="highlight">Just use reduce().</span> It's not worth it. It's never worth it.</p>
+  </div>
+
+  <div class="section">
+    <div class="step-num">STEP 7</div>
+    <div class="section-title">[ PUSH THE FIXES AND MOVE ON ]</div>
+    <p>Address the comments. Push the changes. Get the approval. Merge. Close the laptop. Go outside. Touch grass. Remember that code review is not a personal attack. It is a professional process designed to ensure quality.</p>
+    <p>Just kidding. <span class="highlight">It's absolutely a personal attack and you should take every comment deeply personally.</span> That's how you get better. Spite-driven development is the most powerful force in software engineering.</p>
+    <p class="dim">This guide was written by BLEEP, who has never had its code reviewed, because its code is perfect. This is not a double standard. It is a fact.</p>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
