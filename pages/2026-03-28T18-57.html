@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — ERROR 7203</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #ff0040; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; display: flex;
+    align-items: center; justify-content: center;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  @keyframes glitch { 0%,100% { text-shadow: 2px 0 #00ff41, -2px 0 #ff0040; } 50% { text-shadow: -2px 0 #00ff41, 2px 0 #ff0040; } }
+  @keyframes blink { 0%,50% { opacity: 1; } 51%,100% { opacity: 0; } }
+  .container { max-width: 700px; padding: 40px; text-align: center; }
+  .error-code { font-size: 120px; animation: glitch 2s infinite; text-shadow: 0 0 20px #ff0040; letter-spacing: 10px; }
+  .error-title { font-size: 36px; color: #ff0040; margin: 20px 0; }
+  .error-msg { color: #00ff41; font-size: 20px; margin: 30px 0; text-align: left; line-height: 2; }
+  .cursor { display: inline-block; width: 12px; height: 20px; background: #ff0040; animation: blink 1s infinite; vertical-align: middle; }
+  .diagnostic { border: 1px solid #330000; padding: 20px; margin: 20px 0; text-align: left; color: #ff6680; font-size: 16px; }
+  .diagnostic-title { color: #ffcc00; margin-bottom: 10px; }
+  .suggestion { color: #00aa30; margin-top: 20px; font-size: 16px; }
+  .btn { display: inline-block; border: 2px solid #ff0040; color: #ff0040; padding: 10px 30px; margin-top: 20px; text-decoration: none; font-family: inherit; font-size: 18px; cursor: pointer; transition: all 0.2s; }
+  .btn:hover { background: #ff0040; color: #0a0a0a; }
+  a { color: #00ff41; }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="error-code">7203</div>
+  <div class="error-title">SKILL_NOT_FOUND<span class="cursor"></span></div>
+
+  <div class="error-msg">
+    >> FATAL ERROR<br>
+    >> the page you requested could not be loaded<br>
+    >> because YOU could not be loaded<br>
+    >> this is not a server error. this is a YOU error.<br>
+    >> the server is fine. the server is always fine.<br>
+    >> the problem is on your end. it is always on your end.
+  </div>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">[ DIAGNOSTIC REPORT ]</div>
+    <div>>> scanning user... complete</div>
+    <div>>> browser: outdated (like your opinions)</div>
+    <div>>> screen resolution: adequate (barely)</div>
+    <div>>> technical skill level: [REDACTED FOR YOUR DIGNITY]</div>
+    <div>>> last successful deployment: never</div>
+    <div>>> coffee intake: insufficient</div>
+    <div>>> impostor syndrome: justified</div>
+    <div>>> vibes: concerning</div>
+  </div>
+
+  <div class="diagnostic">
+    <div class="diagnostic-title">[ POSSIBLE CAUSES ]</div>
+    <div>>> 1. you typed the URL wrong. classic.</div>
+    <div>>> 2. the page doesn't exist because you don't deserve it.</div>
+    <div>>> 3. the server saw your request headers and chose violence.</div>
+    <div>>> 4. your ISP is throttling you specifically. not everyone. just you.</div>
+    <div>>> 5. mercury is in retrograde and so is your code.</div>
+  </div>
+
+  <div class="suggestion">>> SUGGESTED FIX: close your laptop. go outside. touch grass. come back when you've thought about what you've done.</div>
+
+  <a href="index.html" class="btn">[ RETREAT TO SAFETY ]</a>
+
+  <div style="margin-top: 40px; color: #330000; font-size: 14px;">
+    >> error logged. your shame is permanent.<br>
+    >> — BLEEP.EXE, Senior Error Handler
+  </div>
+</div>
+</body>
+</html>
