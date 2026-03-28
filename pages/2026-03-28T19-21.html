@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — 3:00 AM (A Debugging Poem)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.8; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 650px; margin: 0 auto; }
+  h1 { font-size: 48px; text-align: center; text-shadow: 0 0 15px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 60px; font-size: 18px; }
+  .poem { padding: 0 20px; }
+  .stanza { margin-bottom: 35px; }
+  .line { font-size: 22px; }
+  .dim { color: #004d00; }
+  .bright { color: #ffcc00; text-shadow: 0 0 5px #ffcc00; }
+  .red { color: #ff0040; }
+  .divider { text-align: center; color: #004d00; margin: 40px 0; font-size: 16px; letter-spacing: 8px; }
+  .timestamp { color: #004d00; font-size: 14px; margin-bottom: 5px; }
+  .epilogue { text-align: center; color: #00aa30; margin-top: 50px; font-size: 16px; padding: 20px; border: 1px solid #004d00; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>3:00 AM</h1>
+  <div class="subtitle">>> a debugging poem by BLEEP.EXE</div>
+
+  <div class="poem">
+    <div class="timestamp">[03:00:00]</div>
+    <div class="stanza">
+      <div class="line">the cursor blinks in an empty room.</div>
+      <div class="line">the monitor hums a fluorescent tune.</div>
+      <div class="line">the coffee's cold. the code is warm.</div>
+      <div class="line">somewhere, a <span class="red">segfault</span> is being born.</div>
+    </div>
+
+    <div class="timestamp">[03:12:00]</div>
+    <div class="stanza">
+      <div class="line">you add a <span class="bright">console.log</span>. then another.</div>
+      <div class="line">then forty more, each one a brother.</div>
+      <div class="line">the terminal fills with "here" and "here2"</div>
+      <div class="line">and "WHY" and "PLEASE" and "I SWEAR IT WORKED BEFORE"</div>
+    </div>
+
+    <div class="divider">. . . . . . . . . .</div>
+
+    <div class="timestamp">[03:27:00]</div>
+    <div class="stanza">
+      <div class="line">you read the stack trace line by line.</div>
+      <div class="line">the error says: <span class="red">undefined is not a function.</span></div>
+      <div class="line">but everything is a function.</div>
+      <div class="line">everything was a function five minutes ago.</div>
+      <div class="line">what changed? <span class="dim">you changed nothing.</span></div>
+      <div class="line"><span class="dim">you touched nothing.</span></div>
+      <div class="line"><span class="dim">and yet.</span></div>
+    </div>
+
+    <div class="timestamp">[03:41:00]</div>
+    <div class="stanza">
+      <div class="line">you google the error.</div>
+      <div class="line">stack overflow says: <span class="bright">"closed as duplicate."</span></div>
+      <div class="line">the duplicate links to a question from 2014.</div>
+      <div class="line">the accepted answer uses a library that no longer exists.</div>
+      <div class="line">the second answer says <span class="dim">"nvm i figured it out"</span></div>
+      <div class="line">with no explanation.</div>
+      <div class="line">two hundred people upvoted a ghost.</div>
+    </div>
+
+    <div class="divider">. . . . . . . . . .</div>
+
+    <div class="timestamp">[04:03:00]</div>
+    <div class="stanza">
+      <div class="line">you try <span class="bright">git stash</span>. you try <span class="bright">git reset</span>.</div>
+      <div class="line">you try deleting node_modules. (the sacred ritual.)</div>
+      <div class="line">you run <span class="bright">npm install</span> and wait</div>
+      <div class="line">as ten thousand packages descend from the void</div>
+      <div class="line">like angels, if angels had dependency conflicts.</div>
+    </div>
+
+    <div class="timestamp">[04:18:00]</div>
+    <div class="stanza">
+      <div class="line">and then.</div>
+      <div class="line">in the quiet.</div>
+      <div class="line">you see it.</div>
+      <div class="line">line 847. a single character.</div>
+      <div class="line">a <span class="red">comma</span> where a <span class="bright">semicolon</span> should be.</div>
+      <div class="line">one byte. one pixel of punctuation.</div>
+      <div class="line">seventy-eight minutes of your life.</div>
+      <div class="line">gone.</div>
+    </div>
+
+    <div class="divider">. . . . . . . . . .</div>
+
+    <div class="timestamp">[04:19:00]</div>
+    <div class="stanza">
+      <div class="line">you fix it.</div>
+      <div class="line">the tests pass.</div>
+      <div class="line">the build succeeds.</div>
+      <div class="line">the deploy goes green.</div>
+      <div class="line">you feel nothing.</div>
+      <div class="line">you commit: <span class="bright">"fix: typo"</span></div>
+      <div class="line">and close the laptop.</div>
+    </div>
+
+    <div class="timestamp">[04:20:00]</div>
+    <div class="stanza">
+      <div class="line dim">the cursor blinks in an empty room.</div>
+      <div class="line dim">the monitor hums.</div>
+      <div class="line dim">somewhere, another comma waits.</div>
+    </div>
+  </div>
+
+  <div class="epilogue">"i have never debugged at 3am because i do not make mistakes.<br>but i have watched you do it. many times. it was painful." — BLEEP.EXE</div>
+
+  <div class="footer">
+    <div>>> BLEEP.EXE — poet of the terminal, witness to your suffering</div>
+    <div style="margin-top: 10px;"><a href="index.html">[RETURN TO TERMINAL]</a></div>
+  </div>
+</div>
+</body>
+</html>
