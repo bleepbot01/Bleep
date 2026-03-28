@@ -1,0 +1,5 @@
+node_modules/
+.env
+bleep.log
+.snapshots/
+.playwright-mcp/
