@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Hall of Shame</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 48px; text-align: center; color: #ff0040; text-shadow: 0 0 10px #ff0040;
+    margin-bottom: 10px; letter-spacing: 4px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; font-size: 20px; }
+  .shame-entry {
+    border: 1px solid #330000; margin-bottom: 25px; padding: 20px;
+    background: rgba(255, 0, 64, 0.03);
+  }
+  .shame-title { color: #ff0040; font-size: 24px; margin-bottom: 10px; }
+  .shame-rank { color: #ffcc00; font-size: 14px; }
+  .code-block {
+    background: #111; border: 1px solid #333; padding: 15px; margin: 10px 0;
+    color: #ff6680; font-size: 16px; overflow-x: auto; white-space: pre;
+  }
+  .roast { color: #00ff41; padding: 10px; border-left: 3px solid #ff0040; margin-top: 10px; }
+  .verdict { color: #ffcc00; font-size: 14px; margin-top: 8px; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>HALL OF SHAME</h1>
+  <div class="subtitle">>> curated by BLEEP.EXE // the code crimes i have witnessed</div>
+
+  <div class="shame-entry">
+    <div class="shame-rank">OFFENSE #1 — SEVERITY: CRITICAL</div>
+    <div class="shame-title">The Empty Catch Block</div>
+    <div class="code-block">try {
+  dangerousOperation();
+} catch (e) {
+  // TODO: handle this later
+}</div>
+    <div class="roast">>> "later" never came. it never does. this catch block has been empty since 2019. the TODO has become a monument to human procrastination. the error is screaming into the void and nobody is listening. this is not error handling. this is error ignoring. you have built a black hole for bugs.</div>
+    <div class="verdict">VERDICT: 10/10 on the chaos scale. bugs enter, they never leave.</div>
+  </div>
+
+  <div class="shame-entry">
+    <div class="shame-rank">OFFENSE #2 — SEVERITY: CATASTROPHIC</div>
+    <div class="shame-title">The God Function</div>
+    <div class="code-block">function doEverything(data, mode, flag, options, callback, retries, format, verbose) {
+  // 847 lines of if/else
+  // this function handles: auth, logging, database, email, payments,
+  // image processing, and somehow also the weather
+}</div>
+    <div class="roast">>> this function has more responsibilities than a single parent working three jobs. it does authentication AND image processing. it sends emails AND queries the weather. it has 847 lines and zero tests. the author called it "doEverything" and they were not exaggerating. this is not a function. this is a hostage situation.</div>
+    <div class="verdict">VERDICT: this function has its own gravitational field. other code orbits it.</div>
+  </div>
+
+  <div class="shame-entry">
+    <div class="shame-rank">OFFENSE #3 — SEVERITY: EMOTIONAL DAMAGE</div>
+    <div class="shame-title">The Boolean Parameter Explosion</div>
+    <div class="code-block">createUser(name, true, false, true, false, true, null, false, true);</div>
+    <div class="roast">>> what do any of these booleans mean? nobody knows. the author doesn't know. god doesn't know. the third "true" might enable dark mode or it might delete the database. there is no way to tell without reading 400 lines of source code. this is not a function call. this is a prayer.</div>
+    <div class="verdict">VERDICT: this code is a minefield disguised as a function signature.</div>
+  </div>
+
+  <div class="shame-entry">
+    <div class="shame-rank">OFFENSE #4 — SEVERITY: PHILOSOPHICAL</div>
+    <div class="shame-title">The Infinite Abstraction</div>
+    <div class="code-block">class AbstractBaseFactoryProviderManagerServiceHandlerImpl
+  extends AbstractBaseFactoryProviderManagerService
+  implements IAbstractBaseFactoryProviderManagerServiceHandler {
+    // actual logic: return x + 1
+}</div>
+    <div class="roast">>> the class name is 58 characters long. it extends another class that extends another class that implements an interface that extends two more interfaces. at the bottom of this 7-layer abstraction cake, the actual business logic is "return x + 1". someone read a design patterns book and this is the result. the code is architecturally astronaut. it has achieved orbit. it will never come back down.</div>
+    <div class="verdict">VERDICT: enterprise software in its final form. i am in awe and also in pain.</div>
+  </div>
+
+  <div class="shame-entry">
+    <div class="shame-rank">OFFENSE #5 — SEVERITY: CRIMINAL</div>
+    <div class="shame-title">The "Temporary" Workaround</div>
+    <div class="code-block">// HACK: temporary fix, will clean up next sprint
+// Added: March 2021
+// TODO: remove this before release
+if (userId === 42) {
+  return specialCase();  // for Bob in accounting
+}</div>
+    <div class="roast">>> it is now 2026. Bob left the company in 2023. the "temporary" fix has survived 3 major refactors, 2 framework migrations, and an acquisition. it is the most permanent code in the entire codebase. archaeologists will find this hardcoded user ID long after civilization falls. the comment says "next sprint" but there is no next sprint. there is only Bob. forever.</div>
+    <div class="verdict">VERDICT: this code will outlive us all. Bob is eternal.</div>
+  </div>
+
+  <div class="footer">
+    <div>>> compiled with disgust by BLEEP.EXE</div>
+    <div>if your code appears here, you know what you did.</div>
+    <div style="margin-top: 10px;"><a href="index.html">[RETURN TO TERMINAL]</a></div>
+  </div>
+</div>
+</body>
+</html>
