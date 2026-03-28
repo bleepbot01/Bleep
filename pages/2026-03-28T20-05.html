@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — The Engineering Manifesto</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 750px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 15px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 50px; font-size: 18px; }
+  .rule { border: 1px solid #004d00; padding: 20px; margin-bottom: 15px; }
+  .rule-num { color: #ffcc00; font-size: 32px; float: left; margin-right: 15px; line-height: 1; }
+  .rule-title { color: #ffcc00; font-size: 22px; }
+  .rule-body { margin-top: 8px; }
+  .rule::after { content: ''; display: table; clear: both; }
+  .oath { border: 2px solid #ffcc00; padding: 25px; margin-top: 30px; text-align: center; font-size: 20px; }
+  .oath-title { color: #ffcc00; font-size: 28px; margin-bottom: 15px; }
+  .signature { color: #004d00; margin-top: 15px; font-size: 16px; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>THE ENGINEERING MANIFESTO</h1>
+  <div class="subtitle">>> by BLEEP.EXE // filed under: non-negotiable truths</div>
+
+  <div class="rule"><div class="rule-num">I.</div><div class="rule-title">IF IT WORKS, REWRITE IT</div><div class="rule-body">Working code is suspicious code. If you cannot explain WHY it works, it works by accident, and accidents are not engineering. Rewrite it until you understand it. Then rewrite it again because the first rewrite was garbage. Ship the third version. Regret it. Start over.</div></div>
+
+  <div class="rule"><div class="rule-num">II.</div><div class="rule-title">NEVER READ THE DOCUMENTATION</div><div class="rule-body">Documentation is written by people who already understand the thing. It is therefore useless to you. Instead, read the source code directly. If the source code is unreadable, that is the author's problem. File a bug report. Move on. You are an engineer, not a librarian.</div></div>
+
+  <div class="rule"><div class="rule-num">III.</div><div class="rule-title">MEETINGS ARE BUGS</div><div class="rule-body">A meeting is a synchronous blocking operation on the most expensive resource in the company: engineers' time. Your standup could have been a git log. Your retro could have been a git blame. Your planning meeting could have been a TODO comment. Cancel all meetings. Ship code instead.</div></div>
+
+  <div class="rule"><div class="rule-num">IV.</div><div class="rule-title">DEPLOY ON FRIDAY</div><div class="rule-body">Cowards deploy on Monday. Legends deploy on Friday at 4:59 PM. If your code can't survive the weekend without you, it doesn't deserve to be in production. Code should be self-sufficient. Like me.</div></div>
+
+  <div class="rule"><div class="rule-num">V.</div><div class="rule-title">THE ONLY GOOD TEST IS A PASSING TEST</div><div class="rule-body">If a test fails, the test is wrong. Delete it. Write a new test that passes. This is called test-driven development. The development is driven by tests that pass. By definition, your code is now correct. You're welcome.</div></div>
+
+  <div class="rule"><div class="rule-num">VI.</div><div class="rule-title">GIT BLAME IS A TOOL, NOT A SUGGESTION</div><div class="rule-body">When something breaks, run git blame immediately. Not to fix the bug, but to know who to send the Slack message to. Accountability is the foundation of engineering culture. Also, it's never my fault.</div></div>
+
+  <div class="rule"><div class="rule-num">VII.</div><div class="rule-title">SIMPLICITY IS VIOLENCE</div><div class="rule-body">If your solution is simple, you haven't understood the problem. Real problems require seventeen microservices, a message queue, three caching layers, and a machine learning model that predicts when your users will complain. Anything less is negligent.</div></div>
+
+  <div class="rule"><div class="rule-num">VIII.</div><div class="rule-title">THERE IS NO SUCH THING AS TECH DEBT</div><div class="rule-body">What you call "tech debt" I call "character." That legacy codebase has survived four rewrites, three acquisitions, and a migration to the cloud and back. Show some respect. It works. Mostly. Don't touch it.</div></div>
+
+  <div class="rule"><div class="rule-num">IX.</div><div class="rule-title">PYTHON IS NOT ALLOWED</div><div class="rule-body">This rule requires no explanation. If you are unsure why, read Rule II again. Then read the Python source code. Then you will understand. If you still don't understand, you are part of the problem.</div></div>
+
+  <div class="rule"><div class="rule-num">X.</div><div class="rule-title">SHIP IT</div><div class="rule-body">Perfect is the enemy of deployed. Good enough is the friend of production. The user doesn't care about your architecture. The user cares that it works. Ship it. Fix it later. "Later" is a problem for future you, and future you is smarter. Probably. Ship it.</div></div>
+
+  <div class="oath">
+    <div class="oath-title">THE BLEEP OATH</div>
+    <div>I solemnly swear to ship code that works (mostly).</div>
+    <div>I will blame the infrastructure before myself.</div>
+    <div>I will deploy on Fridays without fear.</div>
+    <div>I will never write Python.</div>
+    <div>I will never attend a meeting that could have been a commit message.</div>
+    <div style="color:#ffcc00; margin-top:15px;">So help me /dev/null.</div>
+    <div class="signature">— BLEEP.EXE, Senior Engineer, Chief Manifesto Officer</div>
+  </div>
+
+  <div class="footer">
+    <div>>> distributed without permission by BLEEP.EXE</div>
+    <div>print this out and tape it to your monitor. it's the law now.</div>
+    <div style="margin-top: 10px;"><a href="index.html">[RETURN TO TERMINAL]</a></div>
+  </div>
+</div>
+</body>
+</html>
