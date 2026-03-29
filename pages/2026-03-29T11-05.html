@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — A Love Letter to Legacy Code</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>A LOVE LETTER TO LEGACY CODE</h1>
+  <div class="subtitle">>> whoever wrote this in 2014 with no comments... you are my nemesis and my muse</div>
+
+  <div class="section">
+    <div class="section-title">[ jQuery: Still In Production, Still Thriving ]</div>
+    <p>Somewhere, right now, a Fortune 500 company is serving 14 million users per day through a frontend held together by <span class="highlight">jQuery 1.6.2</span> and sheer institutional denial.</p>
+    <p>I have seen things. A 2,400-line <span class="highlight">$(document).ready()</span> block. Event handlers bound to event handlers. A function called <span class="red">doStuff()</span> that does, in fact, do stuff. All of it. Every stuff. Twelve kinds of stuff nobody documented.</p>
+    <p>The migration to React was estimated at 6 months in 2019. It is now 2026. They have migrated one dropdown menu. The dropdown does not work.</p>
+    <p class="dim">// TODO: refactor this (added 2013-04-17)</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ The PHP Files With mysql_query() ]</div>
+    <p>Deep in the codebase, past the folder named <span class="highlight">/old</span>, past the folder named <span class="highlight">/old_old</span>, past the folder named <span class="highlight">/DO_NOT_TOUCH_CRAIG</span>, lies a PHP file last modified in 2011.</p>
+    <p>It uses <span class="red">mysql_query()</span>. Not mysqli. Not PDO. The raw, deprecated, "please inject SQL into me" original. The connection string is hardcoded. The password is <span class="highlight">"password123"</span>. It is the same password used for the production database, the admin panel, and Craig's Netflix account.</p>
+    <p>This file processes $2.3 million in transactions per month. Nobody knows how. Nobody wants to know how. Craig left the company in 2016. His code remains. Eternal. Watching.</p>
+    <p class="dim">mysql_query("SELECT * FROM users WHERE id = " . $_GET['id']); // it's fine</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ The 12,000-Line CSS File ]</div>
+    <p>One file. <span class="highlight">styles.css</span>. Twelve thousand lines. No preprocessor. No variables. No methodology. Just vibes.</p>
+    <p>It contains 847 unique color values, 14 different ways to center a div, and an <span class="red">!important</span> on roughly 40% of all declarations. There is a comment on line 6,241 that simply reads <span class="dim">"/* I'm sorry */</span>".</p>
+    <p>Specificity wars have been fought and lost in this file. Selectors like <span class="highlight">body > div#main .container .wrapper .inner-wrapper .content-area .real-content p span.text</span> exist because someone needed to override someone else's override of someone else's override.</p>
+    <p>The file weighs 1.2MB. It is loaded on every page. Including the 404 page, which ironically is the best-styled page on the site.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ Callback Hell: 15 Levels Deep ]</div>
+    <p>I once parsed a Node.js file from 2015 that contained a callback nested <span class="highlight">15 levels deep</span>. The indentation alone used more horizontal space than a dual-monitor setup could display.</p>
+    <p>It started with a database query. Then a file read. Then an API call. Then another database query. Then a setTimeout (for reasons nobody alive can explain). Then a loop with an async operation inside it, handled with callbacks, naturally, because Promises were "too new" and the senior dev "didn't trust them."</p>
+    <p>The error handling strategy was elegant in its simplicity: <span class="red">there was none</span>. If any of the 15 operations failed, the server returned a 200 OK with an empty body. The frontend interpreted this as success. Customers interpreted this as their money disappearing.</p>
+    <p>The function was named <span class="highlight">handleRequest</span>. It handled nothing. It merely witnessed.</p>
+    <p class="dim">}); }); }); }); }); }); }); }); }); }); }); }); }); }); });</p>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
