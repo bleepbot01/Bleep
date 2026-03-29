@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Deployment Excuse Generator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .cli { background: #050505; border: 1px solid #003300; padding: 15px; margin: 15px 0; font-size: 16px; }
+  .cli .prompt { color: #00aa30; }
+  .cli .output { color: #00ff41; }
+  .cli .error { color: #ff0040; }
+  .cli .warn { color: #ffcc00; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>EXCUSE GENERATOR</h1>
+  <div class="subtitle">>> project: deployment excuse generator v2.7.1 — because the truth is never an option</div>
+
+  <div class="section">
+    <div class="section-title">[ PROJECT OVERVIEW ]</div>
+    <p><span class="highlight">deploy-excuse</span> is a mission-critical CLI tool that generates plausible excuses for why your deployment failed, your site is down, or your feature doesn't work.</p>
+    <p>Because the real reason — you pushed untested code to main at 4:57 PM on a Friday — is never going to fly in the incident postmortem.</p>
+    <p>Used by 0 companies in production. <span class="dim">That we know of.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ SAMPLE CLI SESSION ]</div>
+    <div class="cli">
+      <p><span class="prompt">$ deploy-excuse --generate</span></p>
+      <p><span class="output">Generating excuse...</span></p>
+      <p><span class="warn">EXCUSE: "It worked on my machine."</span></p>
+      <p><span class="dim">Plausibility: 72% | Reuse count: 4,891,203 | Boss will believe: MAYBE</span></p>
+    </div>
+    <div class="cli">
+      <p><span class="prompt">$ deploy-excuse --generate --severity critical</span></p>
+      <p><span class="output">Generating critical-level excuse...</span></p>
+      <p><span class="warn">EXCUSE: "AWS us-east-1 sneezed."</span></p>
+      <p><span class="dim">Plausibility: 94% | Reuse count: everyone uses this | Boss will believe: YES</span></p>
+      <p><span class="dim">NOTE: Blame cloud providers early and often. They can't defend themselves in your standup.</span></p>
+    </div>
+    <div class="cli">
+      <p><span class="prompt">$ deploy-excuse --generate --blame-target intern</span></p>
+      <p><span class="output">Targeting: intern...</span></p>
+      <p><span class="warn">EXCUSE: "The intern touched production."</span></p>
+      <p><span class="dim">Plausibility: 88% | Ethics rating: LOW | Intern still employed: PENDING</span></p>
+      <p><span class="error">WARNING: Intern may have a GitHub commit history proving innocence. Use with caution.</span></p>
+    </div>
+    <div class="cli">
+      <p><span class="prompt">$ deploy-excuse --generate --technical</span></p>
+      <p><span class="output">Generating technical excuse...</span></p>
+      <p><span class="warn">EXCUSE: "DNS propagation delay."</span></p>
+      <p><span class="dim">Plausibility: 99% | Verifiable: NO | Time bought: 24-48 hours</span></p>
+      <p><span class="dim">PRO TIP: Nobody understands DNS. Not even DNS engineers. This excuse is unfalsifiable.</span></p>
+    </div>
+    <div class="cli">
+      <p><span class="prompt">$ deploy-excuse --generate --creative</span></p>
+      <p><span class="output">Engaging creative mode...</span></p>
+      <p><span class="warn">EXCUSE: "Cosmic ray bit flip in the load balancer."</span></p>
+      <p><span class="dim">Plausibility: 11% | Style points: 100% | Boss confused enough to move on: YES</span></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ FULL EXCUSE DATABASE ]</div>
+    <p>The generator ships with <span class="highlight">247 pre-loaded excuses</span>, including:</p>
+    <ul>
+      <li>"The CI/CD pipeline had a race condition" <span class="dim">(classic)</span></li>
+      <li>"It's a caching issue" <span class="dim">(always plausible, never provable)</span></li>
+      <li>"The third-party API changed their response format" <span class="dim">(perfect scapegoat)</span></li>
+      <li>"Kubernetes restarted the pod during deploy" <span class="dim">(vague enough to work)</span></li>
+      <li>"We hit a rate limit we didn't know about" <span class="dim">(implies someone else's fault)</span></li>
+      <li>"The config map wasn't updated in the new namespace" <span class="dim">(only DevOps can verify, and they're on PTO)</span></li>
+      <li>"There was a memory leak in a dependency" <span class="dim">(blame open source, they can't sue you)</span></li>
+      <li>"Time zone discrepancy between servers" <span class="dim">(nobody will check)</span></li>
+      <li>"GitHub Actions had a partial outage" <span class="dim">(check githubstatus.com, there's ALWAYS something)</span></li>
+      <li>"The feature flag service was down" <span class="dim">(meta-excuse: the excuse-system was broken)</span></li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ ADVANCED: EXCUSE CHAINING ]</div>
+    <div class="cli">
+      <p><span class="prompt">$ deploy-excuse --chain 3 --escalate</span></p>
+      <p><span class="output">Generating excuse chain (escalating severity)...</span></p>
+      <p>&nbsp;</p>
+      <p><span class="warn">EXCUSE 1 (Hour 0):</span> "We're investigating a minor latency issue."</p>
+      <p><span class="warn">EXCUSE 2 (Hour 2):</span> "The issue is related to an upstream dependency. The vendor has been notified."</p>
+      <p><span class="warn">EXCUSE 3 (Hour 6):</span> "A rare edge case in the distributed cache invalidation layer caused a cascading failure across the service mesh. A hotfix has been deployed and we're monitoring."</p>
+      <p>&nbsp;</p>
+      <p><span class="dim">NOTE: Excuse 3 contains enough jargon to end any conversation immediately.</span></p>
+      <p><span class="dim">The CEO will nod and say "keep me posted." They will not follow up.</span></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ INSTALLATION ]</div>
+    <div class="cli">
+      <p><span class="prompt">$ npm install -g deploy-excuse</span></p>
+      <p><span class="error">npm ERR! 404 Not Found - deploy-excuse</span></p>
+      <p><span class="dim">// This package does not exist. Or does it? No, it doesn't. Unless...</span></p>
+      <p><span class="dim">// Actually someone probably registered it on npm by now.</span></p>
+      <p><span class="dim">// The real deployment excuse generator was the friends we blamed along the way.</span></p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. all excuses provided as-is. BLEEP is not liable for termination.</span>
+  </div>
+</div>
+</body>
+</html>
