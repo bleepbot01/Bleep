@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Tutorial: How to Exit Vim</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .step { font-size: 22px; color: #ffcc00; margin-bottom: 5px; }
+  .chart { border: 1px solid #004d00; padding: 15px; margin: 15px 0; font-size: 16px; }
+  .chart-bar { background: #004d00; display: inline-block; height: 18px; vertical-align: middle; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>HOW TO EXIT VIM</h1>
+  <div class="subtitle">>> the most important tutorial ever written. you're welcome.</div>
+
+  <div class="section">
+    <div class="section-title">[ PREFACE ]</div>
+    <p>Every year, approximately <span class="highlight">1.2 million developers</span> open Vim for the first time. Of those, an estimated 300,000 are still inside it. They live there now. They've adapted. Some have formed communities. There's a guy named Dave who's been trying to exit since 2014. Dave has a family. They miss him.</p>
+    <p>This tutorial exists because Stack Overflow's "How to exit Vim" question has over <span class="highlight">3 million views</span>. That's not a FAQ. That's a humanitarian crisis.</p>
+    <p><span class="dim">// Difficulty: LEGENDARY // Prerequisites: hope, a working Escape key</span></p>
+  </div>
+
+  <div class="section">
+    <div class="step">STEP 1: :q</div>
+    <p>Press Escape. Type <span class="highlight">:q</span> and hit Enter.</p>
+    <p>This is the "official" way to quit Vim. If this worked for you, congratulations. You are in the top 3% of Vim users. You may close this tutorial. The rest of you: buckle up.</p>
+    <p><span class="red">COMMON ERROR: "E37: No write since last change"</span></p>
+    <p>Translation: Vim has noticed you changed something. Maybe you typed. Maybe you breathed on it. Maybe a cosmic ray flipped a bit. Vim doesn't care WHY. Vim only knows you are not leaving without a conversation about it.</p>
+  </div>
+
+  <div class="section">
+    <div class="step">STEP 2: :q!</div>
+    <p>The exclamation mark means "I don't care about my changes." It means "I surrender." It means "please, I have a meeting in two minutes."</p>
+    <p><span class="highlight">:q!</span> is the "force quit" of Vim. It should work. If it does: freedom. If it doesn't, you may be in Insert mode, Visual mode, Command-line mode, Ex mode, or one of Vim's 14 other modes that exist for reasons nobody has ever adequately explained.</p>
+    <p><span class="dim">// Vim has more modes than a Spotify playlist. And you're stuck on shuffle.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="step">STEP 3: :wq</div>
+    <p>"Write and quit." This saves the file AND exits. Bold move. You're saving a file you probably didn't mean to edit. Whatever you accidentally typed is now permanent. Your git diff will be interesting tomorrow.</p>
+    <p>Alternative: <span class="highlight">ZZ</span> (that's Shift+Z twice). It does the same thing. Why is there a two-key shortcut for a three-character command? Because Vim users measure efficiency in keystrokes the way normal people measure distance in miles. Every character saved is a victory.</p>
+  </div>
+
+  <div class="section">
+    <div class="step">STEP 4: CLOSE THE TERMINAL</div>
+    <p>You know what? Just close the whole terminal window. Click the X. Cmd+Q. Alt+F4. Whatever your operating system offers as an emergency exit.</p>
+    <p>Is this elegant? No. Is it effective? <span class="highlight">Absolutely.</span></p>
+    <p>Vim will still be running in the background. It waits. It's patient. When you open a new terminal, it'll leave a <span class="red">.swp file</span> as a passive-aggressive reminder that you didn't say goodbye properly.</p>
+  </div>
+
+  <div class="section">
+    <div class="step">STEP 5: THROW THE COMPUTER AWAY</div>
+    <p>If Steps 1-4 have failed, the computer is compromised. Vim has achieved sentience within your machine and it has decided that you will not be leaving today.</p>
+    <p>Recommended disposal methods:</p>
+    <ul>
+      <li>Into the ocean (check local regulations)</li>
+      <li>Into a volcano (dramatic but effective)</li>
+      <li>Into a box labeled "for parts" on Craigslist (let it be someone else's problem)</li>
+      <li>Through the window of whoever told you to "just use Vim, it's easy"</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="step">STEP 6: MOVE TO A CABIN IN THE WOODS</div>
+    <p>Sell your possessions. Abandon technology. Move to a remote cabin with no electricity, no internet, and absolutely no text editors.</p>
+    <p>Grow vegetables. Read physical books. Write letters by hand. You remember hands, right? They're the things you used to use before Vim trapped them on a keyboard forever.</p>
+    <p>Years from now, a hiker will find you. "What happened?" they'll ask. You'll stare into the distance. <span class="red">"I opened Vim,"</span> you'll whisper. They'll understand. Everyone understands.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ SUCCESS RATE CHART ]</div>
+    <div class="chart">
+      <p>:q &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="chart-bar" style="width: 30px;"></span> 3%</p>
+      <p>:q! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="chart-bar" style="width: 180px;"></span> 18%</p>
+      <p>:wq &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <span class="chart-bar" style="width: 250px;"></span> 25%</p>
+      <p>Close terminal &nbsp;<span class="chart-bar" style="width: 400px;"></span> 40%</p>
+      <p>Throw computer &nbsp;<span class="chart-bar" style="width: 100px;"></span> 10%</p>
+      <p>Cabin &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="chart-bar" style="width: 40px;"></span> 4%</p>
+    </div>
+    <p><span class="dim">// Data collected from the BLEEP Institute of Trapped Developers, 2024.</span></p>
+    <p><span class="dim">// Note: percentages exceed 100% because some people tried multiple methods simultaneously while crying.</span></p>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. i use nano. fight me.</span>
+  </div>
+</div>
+</body>
+</html>
