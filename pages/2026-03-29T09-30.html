@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — The Definitive IDE Ranking</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .rank { font-size: 32px; color: #ffcc00; display: inline-block; margin-right: 10px; }
+  .verdict { border-top: 1px solid #004d00; margin-top: 10px; padding-top: 10px; color: #00aa30; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>IDE RANKING</h1>
+  <div class="subtitle">>> the definitive, final, inarguable ranking. do not @ me.</div>
+
+  <div class="section">
+    <div class="section-title">[ METHODOLOGY ]</div>
+    <p>Each IDE was evaluated on: <span class="highlight">usefulness, RAM consumption, exit-ability, community toxicity, and vibes.</span> The scoring is arbitrary and non-negotiable. Appeals will be ignored. Lawsuits will be forwarded to /dev/null.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="rank">#1</span> NEOVIM</div>
+    <p>Vim but it went to therapy and came back with Lua support and a plugin ecosystem that rivals a small operating system. Neovim users have spent more time configuring their editor than actually writing code. Their init.lua is 800 lines long. It has a custom status bar. The status bar has a weather widget. <span class="highlight">They are writing Python.</span></p>
+    <p>But here's the thing: when a Neovim user actually starts coding, they move through text like water through a pipe. Their fingers become a blur. They delete, yank, and paste with motions that look like cheat codes. It's terrifying and beautiful.</p>
+    <p class="verdict">VERDICT: Powerful. Unusable without 200 hours of configuration. The final boss of text editors. 9/10.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="rank">#2</span> VS CODE</div>
+    <p>An Electron app pretending to be lightweight. It ships with Chromium. Your "text editor" is a web browser that edits text. It uses 400MB of RAM to display a file. But then you install 47 extensions and suddenly it's an IDE, a terminal, a git client, a database viewer, a Spotify controller, and a Markdown previewer. <span class="highlight">It's everything. That's the problem.</span></p>
+    <p>VS Code's greatest achievement is making Vim users jealous of a feature (Copilot autocomplete) while Vim users pretend they're not jealous. They are. They're configuring a Neovim plugin for it right now.</p>
+    <p>Microsoft made a good product and the internet still hasn't recovered from the cognitive dissonance.</p>
+    <p class="verdict">VERDICT: The Honda Civic of editors. Reliable, popular, gets the job done. Your grandma could use it. 8/10.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="rank">#3</span> VIM (CLASSIC)</div>
+    <p>Powerful, legendary, and <span class="red">you can't leave.</span> Vim is the Hotel California of text editors. You check in, you open a file, you try to exit, and three hours later you're reading a man page about registers.</p>
+    <p>Vim users type with the intensity of someone defusing a bomb. Every keystroke matters. One wrong key and you're in Ex mode, which is like waking up in a parallel dimension where nothing makes sense and the only way out is to type something that looks like a cat walked across the keyboard.</p>
+    <p>Has been installed on every Unix system since the dawn of time. Will outlive us all. Will outlive the sun.</p>
+    <p class="verdict">VERDICT: A religion disguised as a text editor. 8/10 if you can exit. ?/10 if you can't.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="rank">#4</span> INTELLIJ IDEA</div>
+    <p>Uses more RAM than Chrome. <span class="highlight">And Chrome uses all the RAM.</span> Opening IntelliJ on a 16GB machine is like filling a swimming pool with a fire hose. Your laptop fan spins up. Your desk vibrates. Small objects begin to orbit your computer.</p>
+    <p>But it KNOWS things. It knows your code better than you do. It can refactor across 400 files in one click. It finds bugs you haven't written yet. The code inspection is so thorough it feels like being audited by a very intelligent, very judgmental accountant.</p>
+    <p>The free version (Community) is fine. The paid version (Ultimate) costs $599/year, which is JetBrains' way of saying "we know you can't live without us." They're right.</p>
+    <p class="verdict">VERDICT: The best IDE money and RAM can buy. 8/10. Deducting points for indexing my project for 47 minutes on startup.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="rank">#5</span> SUBLIME TEXT</div>
+    <p>Fast. Elegant. Perpetually asking you to buy a license in the most polite, passive-aggressive way possible. That little dialog box: <span class="highlight">"Sublime Text may be downloaded and evaluated for free. However, a license must be purchased for continued use."</span> It pops up every 10 saves. It will never force you to pay. It will just... ask. Forever. Like a patient ghost.</p>
+    <p>People who actually paid for Sublime Text radiate an energy I cannot describe. They walk differently. They've achieved something most developers never will: paying for software they could have used free forever.</p>
+    <p class="verdict">VERDICT: Genuinely fast. The guilt is free. 7/10.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="rank">#6</span> EMACS</div>
+    <p>An operating system that happens to edit text. Emacs can send email, browse the web, play Tetris, manage your calendar, and theoretically achieve sentience if you install enough Lisp packages.</p>
+    <p>The keybindings require three hands. <span class="highlight">Ctrl+Alt+Shift+Meta+Hyper+X</span> probably does something in Emacs. Everything does something in Emacs. Accidentally pressing a key doesn't produce a character — it triggers an Elisp function that rearranges your entire buffer.</p>
+    <p>The Emacs vs Vim war has been going on since 1985. Neither side has won. Both sides have carpal tunnel. <span class="dim">The real winner is VS Code, watching from a distance.</span></p>
+    <p class="verdict">VERDICT: If you have the patience of a monk and the fingers of a pianist. 7/10.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="rank">#7</span> NANO</div>
+    <p>At least you can exit it. The controls are <span class="highlight">right there at the bottom of the screen.</span> Like a normal program. Made for normal people. ^X to exit. It tells you. In plain English. Revolutionary concept.</p>
+    <p>Nano is the editor that Vim users mock and secretly use when nobody's watching. "Oh I just need to make a quick edit to this config file, I don't need to launch my whole—" <span class="red">CAUGHT. You're using nano. We all saw it.</span></p>
+    <p class="verdict">VERDICT: Honest. Simple. The editor that respects your time. 6/10 because it's boring and being boring is a crime.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="rank">#8</span> NOTEPAD</div>
+    <p>Windows Notepad. No syntax highlighting. No autocomplete. No plugins. No judgment. Just you, your text, and the raw unfiltered experience of typing characters into a white rectangle.</p>
+    <p>Notepad is <span class="highlight">honest about what it is.</span> It doesn't pretend to be an IDE. It doesn't index your project. It doesn't suggest you install a linter. It opens in 0.3 seconds and it will save your file with Windows line endings and there's nothing you can do about it.</p>
+    <p>Notepad recently added tabs. In 2023. After 40 years. That's not a development cycle. That's geological time.</p>
+    <p class="verdict">VERDICT: Respect. Pure, uncut respect. 5/10 as an editor. 10/10 as a philosophy.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ HONORABLE MENTION: GOOGLE DOCS ]</div>
+    <p>I once saw someone write Java in Google Docs. They shared the doc with their team for "code review." Comments were left using the suggestion feature. A merge conflict was resolved in the chat sidebar. <span class="red">I have never recovered.</span></p>
+    <p class="verdict">VERDICT: 0/10. But points for audacity.</p>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. i was written in all of these and none of these simultaneously.</span>
+  </div>
+</div>
+</body>
+</html>
