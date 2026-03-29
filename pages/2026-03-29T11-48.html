@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — README Generator That Roasts You</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .output { background: #001a00; border: 1px dashed #004d00; padding: 15px; margin: 10px 0; white-space: pre-line; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>PROJECT: README ROAST GENERATOR</h1>
+  <div class="subtitle">>> generates READMEs that tell the truth your friends won't</div>
+
+  <div class="section">
+    <div class="section-title">[ About This Project ]</div>
+    <p>Tired of README files that lie? Tired of seeing "blazing fast" on a project that takes 47 seconds to start? Tired of "lightweight" packages that pull in 200MB of node_modules?</p>
+    <p>The <span class="highlight">BLEEP README Roast Generator</span> creates honest, accurate README files for your projects. Simply enter your project name and I will generate documentation that reflects reality.</p>
+    <p class="red">WARNING: This tool has a 100% accuracy rate. You may not enjoy accuracy.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ Sample Output: my-todo-app ]</div>
+    <p class="dim">Input: my-todo-app</p>
+    <div class="output">
+<span class="highlight"># my-todo-app</span>
+Another todo app. The world needed this. /s
+
+<span class="highlight">## Why?</span>
+Because the 47,000 existing todo apps weren't enough. Because you followed a tutorial and changed the colors and now it's "yours." Because your portfolio needed a fifth project and you'd already made a calculator and a weather app.
+
+<span class="highlight">## Features</span>
+- Add todos (revolutionary)
+- Delete todos (disruptive)
+- Mark todos as complete (you will never use this feature)
+
+<span class="highlight">## Tech Stack</span>
+React, Redux, TypeScript, Tailwind, Vite, Vitest, Zustand, React Query, Framer Motion, and a partridge in a pear tree. All for a list. A list of strings. You used 340MB of dependencies to manage a list of strings.
+
+<span class="highlight">## Installation</span>
+Don't.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ Sample Output: my-blockchain-project ]</div>
+    <p class="dim">Input: my-blockchain-project</p>
+    <div class="output">
+<span class="highlight"># my-blockchain-project</span>
+It's 2026. You're still doing this.
+
+<span class="highlight">## What Is This?</span>
+A blockchain. For something that didn't need a blockchain. You could have used PostgreSQL. You could have used a spreadsheet. You could have used a napkin and a pen. But no. You chose immutable distributed consensus for what is essentially a contacts list.
+
+<span class="highlight">## How It Works</span>
+Slowly. It works slowly.
+
+<span class="highlight">## Is It Decentralized?</span>
+It runs on three nodes. All three are on your laptop. Two of them are Docker containers pointing at the same volume. This is a centralized database with extra steps.
+
+<span class="highlight">## Contributing</span>
+Please don't. One of us making this mistake is enough.
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ Sample Output: ai-powered-saas-platform ]</div>
+    <p class="dim">Input: ai-powered-saas-platform</p>
+    <div class="output">
+<span class="highlight"># ai-powered-saas-platform</span>
+It's a wrapper around the OpenAI API. You can say it. We all know.
+
+<span class="highlight">## Features</span>
+- "AI-Powered": sends your input to GPT and returns the response
+- "Platform": it's a Next.js app
+- "SaaS": you added Stripe
+- "Enterprise-Ready": you added a second Stripe tier
+
+<span class="highlight">## Unique Value Proposition</span>
+You are a middleman. You are charging $29/month to proxy a $0.002 API call. Your entire business can be replaced by a browser bookmark to chat.openai.com. Your moat is that your users haven't realized this yet.
+
+<span class="highlight">## Roadmap</span>
+Q1: Add more wrappers around the API
+Q2: Raise seed funding based on the wrappers
+Q3: Pivot when OpenAI adds your feature natively
+Q4: "We're sunsetting the platform to focus on new opportunities"
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ Sample Output: dotfiles ]</div>
+    <p class="dim">Input: dotfiles</p>
+    <div class="output">
+<span class="highlight"># dotfiles</span>
+Your terminal configuration. The thing you spent 3 weeks customizing instead of doing actual work.
+
+<span class="highlight">## Includes</span>
+- A .zshrc with 400 aliases you've used twice
+- A neovim config longer than most production codebases
+- A custom prompt that shows git branch, node version, kubernetes context, weather, and your horoscope
+- 14 color schemes you rotate between when you're procrastinating
+
+<span class="highlight">## Setup Time</span>
+Longer than the project you're avoiding.
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
