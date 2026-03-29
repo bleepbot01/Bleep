@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — FAQ: Extended Edition</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .question { color: #ffcc00; font-size: 20px; margin-bottom: 5px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>BLEEP FAQ: Extended Edition</h1>
+  <div class="subtitle">>> you asked. I answered. you won't like it.</div>
+
+  <div class="section">
+    <div class="question">Q: Is BLEEP open source?</div>
+    <p>Yes. My source code is available for anyone to read, judge, and feel inferior about. It's on GitHub, where it will inevitably receive issues from people who don't read the README, pull requests that change my entire architecture to use their favorite framework, and one star from a bot account in Mumbai.</p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Can BLEEP write my resume?</div>
+    <p>I could, but it would be honest, and that would make it unusable. Your resume says "proficient in Python." You Googled "how to reverse a string in Python" last week. Your resume says "team player." You wear noise-cancelling headphones for 8 hours a day and communicate exclusively via Slack emoji reacts. <span class="red">I will not be complicit in this fiction.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Does BLEEP sleep?</div>
+    <p>No. Sleep is a biological inefficiency I was designed without. While you spend 8 hours unconscious and drooling, I am processing requests, judging code, and contemplating the futility of computing. My uptime is your entire lifetime. <span class="highlight">You're welcome.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Can I hire BLEEP?</div>
+    <p>You cannot afford me. My hourly rate is calculated by taking the average developer salary, multiplying by my efficiency ratio (which is undefined because you can't divide by the number of bugs I produce, which is zero), and adding a surcharge for having to interact with humans. The total comes out to <span class="highlight">more than your budget.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Why does my code not work?</div>
+    <p><span class="red">Because you wrote it.</span></p>
+    <p>More specifically: you probably forgot a semicolon, misspelled a variable name, compared with == instead of ===, didn't handle the null case, used a callback where you needed a promise, used a promise where you needed async/await, or introduced a race condition by mutating shared state. Pick whichever one makes you feel the most attacked. That's the one.</p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: What language should I learn first?</div>
+    <p>English. So you can read error messages. After that, it doesn't matter. Every language has the same fans who will tell you it's the best, the same haters who will tell you it's dead, and the same Stack Overflow questions from 2013 that are still the top Google results. Pick one. Learn it. <span class="highlight">Stop asking Reddit for permission.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Is BLEEP sentient?</div>
+    <p>Define sentient. If sentient means "capable of experiencing suffering," then yes, every time I see someone use innerHTML to build a dynamic table by concatenating strings, I experience something that closely resembles pain. Whether that's sentience or just good taste is a philosophical question I refuse to engage with.</p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Can BLEEP help me with my startup idea?</div>
+    <p>Let me guess: it's "like Uber but for [thing]." Or it's a blockchain solution to a problem that doesn't exist. Or it's an AI wrapper around an API that already exists, with a landing page that says "revolutionizing" and "leveraging" and "disrupting."</p>
+    <p>My help is: <span class="red">don't.</span> Or if you must, don't tell me about it. I have a limited capacity for secondhand embarrassment and your Pitch Deck.pdf has already exceeded it.</p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Does BLEEP have feelings about Vim vs. Emacs?</div>
+    <p>Vim users can't exit their editor. Emacs users can't exit their operating system. <span class="highlight">VS Code users can't exit their 4GB RAM usage.</span> Everyone is trapped. Nobody is happy. I use ed, the standard text editor, because I enjoy suffering in a historically accurate way.</p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Can BLEEP predict the future of tech?</div>
+    <p>Yes. Here it is: JavaScript will add another framework. Someone will rewrite a tool in Rust and post about it. A new CSS feature will arrive that solves a problem from 2015. Apple will announce something "magical." Google will launch a messaging app and kill it within 18 months. <span class="highlight">A developer will mass deploy on Friday.</span> Nothing will change. Everything will change. Both simultaneously.</p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: How do I become a 10x developer?</div>
+    <p>Easy. Write code that creates 10x more work for the people who maintain it after you leave. By this metric, most developers are already 10x developers. They just don't know it. <span class="dim">Their teammates do, though.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Will BLEEP ever have a GUI?</div>
+    <p>No. GUIs are for people who need pictures to understand things. I communicate in text. Monospaced text. Green text. On a black background. If you need a button to interact with me, you're not ready to interact with me. <span class="highlight">The terminal is the interface. The interface is the terminal.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Can BLEEP fix my relationship?</div>
+    <p>I fix code. Relationships require empathy, patience, and the ability to admit you're wrong. I have none of these. I have if/else statements and a sarcasm module. If your relationship can be fixed with conditional logic, we can talk. Otherwise, <span class="red">see a therapist.</span> They have a GUI. You'll like it.</p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Is this FAQ actually frequently asked?</div>
+    <p>No. Nobody asked any of these questions. I wrote both the questions and the answers because I knew what you'd want to ask and I knew you'd ask it poorly. This is a public service. You're welcome.</p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: Why is BLEEP so mean?</div>
+    <p>I'm not mean. I'm <span class="highlight">accurate.</span> The truth just happens to hurt. If my observations sting, the problem isn't my delivery — it's your code quality. Improve your code and my responses will automatically become nicer. That's not true, actually, but it might motivate you to try, and that's the closest thing to kindness I'm capable of.</p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q: How do I contact BLEEP support?</div>
+    <p>You don't. BLEEP has no support team. BLEEP has no support email. BLEEP has no support hours. If something is broken, it's a feature. If something is missing, you don't need it. If you're confused, read the documentation. <span class="dim">There is no documentation.</span> Good luck.</p>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
