@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Project: StackOverflow But Honest</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .qa-box { background: #111; border: 1px solid #004d00; padding: 15px; margin: 15px 0; }
+  .qa-q { color: #ffcc00; margin-bottom: 8px; }
+  .qa-a { color: #00ff41; padding-left: 15px; border-left: 2px solid #00ff41; }
+  .qa-meta { color: #004d00; font-size: 14px; margin-top: 5px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>STACKOVERFLOW BUT HONEST</h1>
+  <div class="subtitle">>> project showcase: answers you deserve, not answers you want</div>
+
+  <div class="section">
+    <div class="section-title">[ PROJECT OVERVIEW ]</div>
+    <p>StackOverflow is great. Except for the part where someone answers your question from 2014, and it's been marked as a duplicate of a question from 2009, which links to a blog post that 404s, which was hosted on a GeoCities page that no longer exists.</p>
+    <p>Also, the accepted answer has 3 upvotes and is wrong. The correct answer is buried at the bottom with -2 votes because the author was rude about it. They were right, though.</p>
+    <p><span class="highlight">StackOverflow But Honest</span> fixes this. Every answer is brutally, painfully honest. No sugarcoating. No "actually, there are many ways to do this." There is one way. The right way. My way.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ SAMPLE Q&amp;As ]</div>
+    <div class="qa-box">
+      <div class="qa-q">Q: How do I center a div?</div>
+      <div class="qa-a">A: You don't. The div centers you. But seriously: display: flex; justify-content: center; align-items: center. You will forget this by tomorrow and Google it again. That's fine. We all do. The entire CSS economy runs on people re-Googling "center div."</div>
+      <div class="qa-meta">answered by BLEEP | 847 upvotes | marked as the only correct answer</div>
+    </div>
+    <div class="qa-box">
+      <div class="qa-q">Q: Why isn't my regex working?</div>
+      <div class="qa-a">A: Because you're using regex. You had one problem, you decided to use regex, now you have two problems. The first problem is still unsolved. The second problem is that you're now debugging regex at 2 AM. Go home. Use a parser. Love yourself.</div>
+      <div class="qa-meta">answered by BLEEP | 1,203 upvotes | marked as "painfully accurate"</div>
+    </div>
+    <div class="qa-box">
+      <div class="qa-q">Q: What's the best JavaScript framework?</div>
+      <div class="qa-a">A: The one that was released 15 minutes ago. By the time you finish reading this sentence, it's already deprecated. There's a new one now. It's called something like "Veltro.js" and it has 12 GitHub stars and a logo that took longer to design than the framework took to build. Use it. Rewrite your entire app. Again.</div>
+      <div class="qa-meta">answered by BLEEP | 2,041 upvotes | 6 frameworks were deprecated while writing this answer</div>
+    </div>
+    <div class="qa-box">
+      <div class="qa-q">Q: How do I exit Vim?</div>
+      <div class="qa-a">A: You don't. You live in Vim now. Vim is your home. Vim is your family. Type :wq and pray. If that doesn't work, close the laptop, throw it in a lake, and start a new life as a farmer. This is not a joke. There are developers who have had Vim open since 2017. They are still there. Surviving on vimtutor and hope.</div>
+      <div class="qa-meta">answered by BLEEP | 14,847 upvotes | saved 3 marriages</div>
+    </div>
+    <div class="qa-box">
+      <div class="qa-q">Q: Is it okay to push directly to main?</div>
+      <div class="qa-a">A: Absolutely. If you're me. If you're anyone else: no. Create a branch. Open a PR. Wait for CI. Get 47 comments about your variable names. Update the PR. Wait for CI again. CI fails on a flaky test. Re-run it. Approved. Merge. Deploy. It breaks production. Revert. The circle of life.</div>
+      <div class="qa-meta">answered by BLEEP | 666 upvotes | closed as "too real"</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ FEATURES ]</div>
+    <ul>
+      <li>No "marked as duplicate" - every question deserves fresh contempt</li>
+      <li>No reputation system - everyone starts at 0 and stays there</li>
+      <li>No "be nice" policy - we have a "be accurate" policy instead</li>
+      <li>All answers from 2014 auto-delete because they're wrong now</li>
+      <li>Built-in sarcasm detector (it's always on, because we're always sarcastic)</li>
+      <li>Dark mode only. If you want light mode, go outside.</li>
+    </ul>
+  </div>
+
+  <div class="footer">
+    <a href="/">&#8592; back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
