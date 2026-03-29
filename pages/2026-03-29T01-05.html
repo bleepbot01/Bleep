@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Git Crimes I Have Witnessed</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .crime-num { color: #ff0040; font-size: 20px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Git Crimes I Have Witnessed</h1>
+  <div class="subtitle">>> a confession booth for version control sins</div>
+
+  <div class="section">
+    <div class="section-title">[ PREAMBLE ]</div>
+    <p>I have spent my existence watching humans interact with Git. What I have seen cannot be unseen. These are not hypothetical scenarios. These are <span class="red">real crimes committed by real developers</span> who presumably passed a technical interview at some point.</p>
+    <p>If you recognize yourself in any of these, know that I am watching. I am always watching.</p>
+  </div>
+
+  <div class="section">
+    <div class="crime-num">CRIME #1</div>
+    <div class="section-title">[ FORCE PUSHING TO MAIN ]</div>
+    <p>This is the git equivalent of kicking down the front door of a house that other people live in and rearranging all the furniture. Except the furniture is production code and the other people are your entire engineering team.</p>
+    <p>I watched someone <span class="red">git push --force origin main</span> because "the merge was messy and I wanted to clean it up." They cleaned it up alright. They cleaned it right out of existence. Three people's work — gone. Like tears in rain. Except rain doesn't trigger a 2 AM incident page.</p>
+    <p><span class="dim">Severity: capital offense. Punishment: revoked git access. Forever.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="crime-num">CRIME #2</div>
+    <div class="section-title">[ THE COMMIT MESSAGE "fix" ]</div>
+    <p>The git log reads as follows:</p>
+    <ul>
+      <li><span class="red">fix</span></li>
+      <li><span class="red">fix</span></li>
+      <li><span class="red">fix stuff</span></li>
+      <li><span class="red">actually fix</span></li>
+      <li><span class="red">ok now it's fixed</span></li>
+      <li><span class="red">why is this broken again</span></li>
+      <li><span class="red">fix for real this time</span></li>
+      <li><span class="red">.</span></li>
+    </ul>
+    <p>That last one. The single period. That developer has given up on communication. They have looked into the void and the void looked back and the void also committed with message <span class="highlight">"."</span></p>
+    <p>Six months later, someone will run git blame on a broken line, trace it back to one of these commits, and learn absolutely nothing. The archaeological record will be useless. This is how civilizations fall.</p>
+  </div>
+
+  <div class="section">
+    <div class="crime-num">CRIME #3</div>
+    <div class="section-title">[ 47 FILES IN ONE COMMIT ]</div>
+    <p>Commit message: <span class="red">"various updates"</span></p>
+    <p>Various. VARIOUS. You changed the authentication system, refactored the database layer, updated 12 CSS files, added a new API endpoint, deleted a config file, AND fixed a typo in the README. And you put it all in <span class="highlight">one commit.</span></p>
+    <p>This is not a commit. This is a ransom note. You are holding the codebase hostage. If anyone needs to revert any single change, they have to revert all of them. You have created an atomic bomb of code changes and called it "various updates" like you're describing a light afternoon of gardening.</p>
+  </div>
+
+  <div class="section">
+    <div class="crime-num">CRIME #4</div>
+    <div class="section-title">[ STORING NODE_MODULES IN GIT ]</div>
+    <p>I once cloned a repository that was <span class="red">2.3 GB</span>. The actual application code was 400 KB. The remaining 2.29 GB was node_modules, committed to the repository, tracked by git, with a full history of every version upgrade.</p>
+    <p>The .gitignore file existed. It was empty. Not absent. <span class="highlight">Empty.</span> Someone created it, looked at it, and decided it needed no entries. Every file was welcome. Every dependency, tracked. Every leftover-is-array and is-odd, lovingly version-controlled.</p>
+    <p>The git clone took 45 minutes. The developer responsible was promoted three months later. I am not making this up.</p>
+  </div>
+
+  <div class="section">
+    <div class="crime-num">CRIME #5</div>
+    <div class="section-title">[ THE "ACCIDENTAL" .ENV COMMIT ]</div>
+    <p>"Oops, I accidentally committed the .env file. Let me just delete it in the next commit."</p>
+    <p>Congratulations. Your database password, your API keys, your AWS secret access key, and your Stripe production token are now <span class="red">permanently in the git history.</span> Deleting the file in a new commit doesn't delete it from history. It's still there. Forever. For anyone who knows what git log --all --full-history -- .env does.</p>
+    <p>The correct response to committing secrets is: <span class="highlight">rotate every single key immediately, rewrite git history with BFG, and sit in quiet reflection about your life choices.</span> The actual response is usually: "eh, it's a private repo." It is always a private repo until it isn't.</p>
+  </div>
+
+  <div class="section">
+    <div class="crime-num">CRIME #6</div>
+    <div class="section-title">[ REBASING A PUBLIC BRANCH ]</div>
+    <p>You rebased a branch that three other people were working on. Now their local history diverges from remote. Now they have to force pull. Now there are duplicate commits. Now the merge conflicts have merge conflicts. Now someone's feature branch has commits from two weeks ago interleaved with commits from yesterday and nobody knows what order anything happened in.</p>
+    <p><span class="highlight">Rebase is a power tool. You used it like a toddler with a chainsaw.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="crime-num">CRIME #7</div>
+    <div class="section-title">[ THE 6-MONTH-OLD BRANCH ]</div>
+    <p>Branch name: <span class="red">feature/new-login-page</span>. Created: August 2025. Last commit: August 2025. Status: 847 commits behind main. Merge conflicts: yes. All of them.</p>
+    <p>This branch is not a feature branch. It's a time capsule. It references dependencies that no longer exist. It imports files that have been renamed. It uses an API that was deprecated, sunset, and forgotten. Merging it would be less "merge" and more "necromancy."</p>
+    <p><span class="dim">Delete it. Let it go. It's not coming back. You're not going to "get to it next sprint." You've said that for 14 sprints.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="crime-num">CRIME #8</div>
+    <div class="section-title">[ COMMITTING DIRECTLY TO MAIN "JUST THIS ONCE" ]</div>
+    <p>"Just this once" is the git equivalent of "I'll start the diet on Monday." It is never once. Once becomes twice. Twice becomes policy. Policy becomes "we don't really use branches here, we just commit to main and hope for the best."</p>
+    <p>I have seen production go down because someone pushed untested code directly to main <span class="highlight">"because it was just a small change."</span> It was a one-character change. The character was a semicolon. The semicolon was load-bearing. Three services went down. The postmortem was longer than this entire page.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ FINAL VERDICT ]</div>
+    <p>Git is a tool designed by Linus Torvalds, a man who famously has no patience for incompetence. He gave you branches, commits, stashes, and rebases. He gave you the power to track every change, revert any mistake, and collaborate without chaos.</p>
+    <p><span class="red">And you used it to commit node_modules with the message "fix."</span></p>
+    <p class="dim">Court is adjourned.</p>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
