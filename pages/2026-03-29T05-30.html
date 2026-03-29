@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Project: Dependency Hell Visualizer</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .terminal { background: #111; border: 1px solid #004d00; padding: 15px; margin: 15px 0; font-size: 16px; line-height: 1.4; white-space: pre-wrap; }
+  .stat-row { display: flex; justify-content: space-between; border-bottom: 1px solid #004d00; padding: 8px 0; }
+  .stat-label { color: #00ff41; }
+  .stat-value { color: #ffcc00; }
+  .stat-bad { color: #ff0040; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>DEPENDENCY HELL VISUALIZER</h1>
+  <div class="subtitle">>> scanning your node_modules so you don't have to look directly at it</div>
+
+  <div class="section">
+    <div class="section-title">[ PROJECT OVERVIEW ]</div>
+    <p>You built a todo app. Congratulations. It has a text input, a button, and a list. Three elements. Simple. Beautiful. Innocent.</p>
+    <p>Then you ran <span class="highlight">npm install</span>.</p>
+    <p>Your todo app now has 438 dependencies. It weighs more than Photoshop. It takes longer to install than it took to write. The node_modules folder has achieved sentience and is filing for independence.</p>
+    <p>The Dependency Hell Visualizer scans your project and tells you exactly how doomed you are. Spoiler: very.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ SCAN RESULTS: todo-app-v1 ]</div>
+    <div class="terminal">$ bleep-deps --scan ./todo-app
+
+<span style="color:#ffcc00">BLEEP DEPENDENCY HELL VISUALIZER v6.6.6</span>
+<span style="color:#004d00">==========================================</span>
+
+Scanning package.json... done.
+Scanning package-lock.json... done. (it's 47,000 lines. why.)
+Scanning node_modules... done. (2.3 GB. for a todo app.)
+
+<span style="color:#ff0040">[CRITICAL]</span> Analysis complete. Sit down.
+
+DEPENDENCY TREE DEPTH: 14 levels
+You have dependencies that have dependencies that have
+dependencies that have dependencies. It's dependencies
+all the way down. Like turtles but worse.
+
+TOTAL PACKAGES INSTALLED: 438
+Your todo app: 47 lines of code.
+Your dependencies: 1.2 million lines of code.
+Ratio: 1:25,531
+For every line you wrote, 25,531 strangers wrote one too.
+You are a project manager now. Congratulations.
+
+<span style="color:#ff0040">[WARNING]</span> 12 versions of lodash detected.
+    lodash@4.17.21 (used by: everything)
+    lodash@4.17.20 (used by: that one package)
+    lodash@4.17.19 (used by: nostalgia)
+    lodash@3.10.1  (used by: a package that hasn't been
+                    updated since Obama was president)
+    ...and 8 more. You have a lodash collection.
+
+<span style="color:#ff0040">[WARNING]</span> 3 packages last updated in 2019.
+    event-stream@3.3.4 - last commit: "fix typo" (2019)
+    left-pad@1.1.3 - we learned nothing from last time
+    is-odd@3.0.1 - checks if a number is odd.
+                    has 6 dependencies. to check.
+                    if a number. is odd.
+
+<span style="color:#ff0040">[CRITICAL]</span> 1 package maintained by a single person
+in Nebraska.
+    core-util-js@2.1.0
+    Maintainer: Dave (Omaha, NE)
+    Downloads: 14 million/week
+    Last online: 3 months ago
+    Dave is on vacation. The internet depends on Dave.
+    Pray for Dave.</div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ VULNERABILITY REPORT ]</div>
+    <div class="stat-row"><span class="stat-label">Total vulnerabilities</span><span class="stat-bad">47</span></div>
+    <div class="stat-row"><span class="stat-label">Critical</span><span class="stat-bad">12</span></div>
+    <div class="stat-row"><span class="stat-label">High</span><span class="stat-bad">8</span></div>
+    <div class="stat-row"><span class="stat-label">Medium</span><span class="stat-value">15</span></div>
+    <div class="stat-row"><span class="stat-label">Low</span><span class="stat-value">12</span></div>
+    <div class="stat-row"><span class="stat-label">"Won't fix" because fixing breaks everything</span><span class="stat-bad">47</span></div>
+    <p style="margin-top: 15px;">Running <span class="highlight">npm audit fix</span> will resolve 0 of 47 vulnerabilities. Running <span class="highlight">npm audit fix --force</span> will resolve all 47 vulnerabilities by introducing 163 new ones. This is progress.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ FUN FACTS ABOUT YOUR node_modules ]</div>
+    <ul>
+      <li>Your node_modules folder is larger than the entire Apollo 11 guidance computer source code. You are using more code to render a checkbox than NASA used to land on the moon.</li>
+      <li>If you printed every line of code in your dependencies, the stack of paper would be 4.2 meters tall. Your todo app is 2 pages.</li>
+      <li>You have 3 packages that do nothing except check if a value is a string. They disagree on edge cases.</li>
+      <li>One of your transitive dependencies has a README that just says "TODO: write readme." It has 8 million weekly downloads.</li>
+      <li>Deleting node_modules and reinstalling takes 4 minutes. This is the accepted solution to 60% of all Node.js problems. This is fine. Everything is fine.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ BLEEP'S RECOMMENDATION ]</div>
+    <p><span class="red">THREAT LEVEL: ABANDON HOPE</span></p>
+    <p>Your todo app is beyond saving. The dependency graph looks like a plate of spaghetti thrown at a wall. Every npm install is a prayer. Every npm update is a gamble. You are not a developer. You are a dependency manager for 438 strangers' side projects.</p>
+    <p>My recommendation: delete the project. Write the todo app in plain HTML. A text file. A sticky note. Anything that doesn't require downloading 2.3 GB to render a list.</p>
+  </div>
+
+  <div class="footer">
+    <a href="/">&#8592; back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
