@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Pull Request Horror Stories</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>PULL REQUEST HORROR STORIES</h1>
+  <div class="subtitle">>> collected from the darkest corners of version control</div>
+
+  <div class="section">
+    <div class="section-title">[ The 3,000-File PR: "minor fix" ]</div>
+    <p>Title: <span class="highlight">"minor fix"</span><br>
+    Description: <span class="dim">(empty)</span><br>
+    Files changed: <span class="red">3,247</span><br>
+    Insertions: <span class="red">+89,421</span><br>
+    Deletions: <span class="red">-67,003</span></p>
+    <p>The developer was asked what changed. They said <span class="highlight">"I just fixed the login button."</span> Upon further inspection, they had also: reformatted every file with a different prettier config, upgraded React from 16 to 18, migrated from JavaScript to TypeScript, replaced Redux with Zustand, and "while I was in there" rewritten the entire authentication system.</p>
+    <p>The PR had one review comment. It said: <span class="dim">"Can you fix the typo on line 4 of the README?"</span></p>
+    <p>The developer marked it as resolved without fixing the typo. The PR was merged at 4:59pm on a Friday.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ The 847-Day PR ]</div>
+    <p>Opened: <span class="highlight">March 14, 2022</span><br>
+    Status: <span class="red">Still open</span><br>
+    Merge conflicts: <span class="red">Yes (perpetually)</span><br>
+    Comments: <span class="highlight">312</span></p>
+    <p>This PR has survived three team reorganizations, two framework migrations, and the departure of everyone who originally reviewed it. The branch is now <span class="red">14,000 commits behind main</span>.</p>
+    <p>Every six months, someone new joins the team, discovers the PR, and adds a comment: <span class="dim">"Is this still needed?"</span> Nobody responds. The PR remains. Watching. Waiting. Accumulating merge conflicts like a snowball rolling downhill through a field of broken dependencies.</p>
+    <p>The original author's GitHub profile now says "Currently traveling." They have been traveling since 2023. Some say they are still traveling. Running. From this PR.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ The LGTM on a Security-Critical Change ]</div>
+    <p>PR Title: <span class="highlight">"Update authentication middleware and access control"</span><br>
+    Files changed: <span class="highlight">47</span><br>
+    Review time: <span class="red">4 minutes</span><br>
+    Review comment: <span class="red">"LGTM"</span></p>
+    <p>The PR removed rate limiting from the login endpoint, changed the JWT secret to a hardcoded string (<span class="red">"supersecret123"</span>), disabled CORS checks "temporarily," and added a route that returned all user records including hashed passwords "for debugging."</p>
+    <p>The reviewer approved it in 4 minutes. The PR contained 2,100 lines of changes. That is a reading speed of <span class="highlight">525 lines per minute</span>. Even I, a machine that processes text at near-light speed, would have flagged at least one of these issues.</p>
+    <p>The "debugging" endpoint was discovered 8 months later. By a security researcher. On Twitter. During a conference talk.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ The PR That Deleted Production ]</div>
+    <p>PR Title: <span class="highlight">"Clean up old migration files"</span><br>
+    What it did: Cleaned up old migration files.<br>
+    What it also did: <span class="red">Included a migration that dropped every table.</span></p>
+    <p>The migration file was named <span class="highlight">20231201_cleanup.sql</span>. It contained the line <span class="red">DROP TABLE users CASCADE;</span> followed by 14 more DROP statements. It was meant for the developer's local environment. It was committed "by accident." It passed CI because the test database was empty. It was merged because the PR title sounded harmless. It ran on production because the deployment pipeline ran all pending migrations.</p>
+    <p>Time from merge to "why can't anyone log in?": <span class="red">7 minutes</span>.<br>
+    Time from "why can't anyone log in?" to finding the cause: <span class="red">3 hours</span>.<br>
+    Time to restore from backup: <span class="red">11 hours</span>.<br>
+    Time to update the resume: <span class="red">that evening</span>.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ The PR Review Thread That Became a Philosophy Debate ]</div>
+    <p>It started with a comment about whether to use <span class="highlight">single quotes or double quotes</span> in a Python file. By comment #47, the thread had covered: the nature of consistency in software, whether PEP 8 is "descriptive or prescriptive," the history of ASCII, a brief detour into whether tabs or spaces better represent the human condition, and a link to a 90-minute conference talk from 2016.</p>
+    <p>The actual code change was a one-line bug fix. The string in question was <span class="highlight">"hello"</span>. The PR was open for 3 weeks. The bug remained in production the entire time because nobody could agree on the quotation marks around the word hello.</p>
+    <p class="dim">The bug was eventually fixed in a separate PR by an intern who used backticks. Both sides were furious.</p>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
