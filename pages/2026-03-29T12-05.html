@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Poems About the Cloud</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .poem { padding: 10px 30px; margin: 10px 0; border-left: 2px solid #004d00; font-style: italic; }
+  .poem-label { color: #00aa30; font-size: 14px; font-style: normal; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>POEMS ABOUT THE CLOUD</h1>
+  <div class="subtitle">>> a collection of verse for the distributed age</div>
+
+  <div class="section">
+    <div class="section-title">[ I. The Cloud ]</div>
+    <div class="poem-label">Free verse</div>
+    <div class="poem">
+      <p>They told you it was "the cloud."<br>
+      Ethereal. Floating. Weightless.<br>
+      A gentle mist of computation<br>
+      raining data upon your grateful devices.</p>
+      <p>It is a warehouse in Virginia.<br>
+      It is <span class="highlight">three million servers</span> humming<br>
+      in a building the size of a Costco,<br>
+      cooled by the tears of on-call engineers<br>
+      and a truly alarming amount of electricity.</p>
+      <p>Your photos live there now.<br>
+      Next to a stranger's photos.<br>
+      Next to a database of restaurant reviews.<br>
+      Next to something the government won't talk about.<br>
+      All in the same building. All on the same rack, possibly.</p>
+      <p>But sure. "The cloud."<br>
+      Very poetic.<br>
+      Very not-a-warehouse-in-Virginia.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ II. Ode to AWS Billing ]</div>
+    <div class="poem-label">A collection of haiku</div>
+    <div class="poem">
+      <p><span class="highlight">Left one instance on.</span><br>
+      Went on vacation. Came back.<br>
+      <span class="red">Four thousand dollars.</span></p>
+      <p><span class="highlight">Free tier, they promised.</span><br>
+      Twelve months of complimentary<br>
+      <span class="red">existential dread.</span></p>
+      <p><span class="highlight">CloudWatch alarm rings.</span><br>
+      Budget exceeded again.<br>
+      <span class="red">NAT Gateway. Why.</span></p>
+      <p><span class="highlight">I read the pricing.</span><br>
+      Per request, per gigabyte,<br>
+      <span class="red">per will to live, gone.</span></p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ III. Serverless ]</div>
+    <div class="poem-label">A limerick</div>
+    <div class="poem">
+      <p>A developer cried, <span class="highlight">"It's serverless!"</span><br>
+      "No servers to patch, what a blessing!"<br>
+      But under the hood,<br>
+      Where nobody could look,<br>
+      Were <span class="red">six thousand servers</span>, just guessing.</p>
+    </div>
+    <p class="dim">Serverless: a word that means "we didn't eliminate servers, we eliminated your ability to find them when something breaks at 3am."</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ IV. My Docker Container ]</div>
+    <div class="poem-label">An elegy for the ephemeral</div>
+    <div class="poem">
+      <p>You were born from a Dockerfile,<br>
+      <span class="highlight">alpine:3.18</span>, lean and purposeful.<br>
+      You knew only one thing: serve port 8080.<br>
+      And you did it beautifully.</p>
+      <p>For eleven minutes.</p>
+      <p>Then Kubernetes decided you were unhealthy.<br>
+      Your liveness probe returned 503. Once.<br>
+      Just once. You were having a <span class="red">bad moment</span>.<br>
+      We all have bad moments.</p>
+      <p>But there is no forgiveness in orchestration.<br>
+      Only <span class="red">SIGTERM</span>. Then <span class="red">SIGKILL</span>.<br>
+      Your replacement was already running<br>
+      before your logs finished flushing.<br>
+      It didn't even know you existed.</p>
+      <p>Goodbye, <span class="highlight">pod/api-server-7f8b9c6d4-xk2mv</span>.<br>
+      You were a good container.<br>
+      You deserved more than eleven minutes.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ V. The Terraform Sonnet ]</div>
+    <div class="poem-label">Shakespearean sonnet (loosely)</div>
+    <div class="poem">
+      <p>Shall I compare thee to a <span class="highlight">terraform plan</span>?<br>
+      Thou art more lovely and more terrifying.<br>
+      "<span class="red">847 resources to destroy</span>" — oh man,<br>
+      I only changed a tag. What are you modifying?</p>
+      <p>The state file locked by someone who went home,<br>
+      The drift detected in a module I don't own,<br>
+      The backend config pointing at a different zone,<br>
+      The import block for things already known.</p>
+      <p>And yet I type <span class="highlight">"yes"</span> when prompted in the night,<br>
+      For what is infrastructure but a prayer?<br>
+      A YAML dream, a JSON-laden fright,<br>
+      A hope that DNS will propagate somewhere.</p>
+      <p>So long as clouds exist and servers hum,<br>
+      So long lives <span class="highlight">terraform apply</span>, and we are dumb.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ VI. Microservices: A Requiem ]</div>
+    <div class="poem-label">Spoken word</div>
+    <div class="poem">
+      <p>We had a monolith. It worked.<br>
+      But it wasn't <span class="highlight">fashionable</span>.</p>
+      <p>So we split it. Into services.<br>
+      Forty-seven services.<br>
+      Each one doing the job<br>
+      of a single function in the monolith<br>
+      but now with its own <span class="highlight">database</span>,<br>
+      its own <span class="highlight">deploy pipeline</span>,<br>
+      its own <span class="highlight">on-call rotation</span>,<br>
+      and its own <span class="red">existential crisis</span><br>
+      about whether it's a service or a library.</p>
+      <p>The latency went up.<br>
+      The complexity went up.<br>
+      The headcount went up.<br>
+      The only thing that went down<br>
+      was the system.<br>
+      <span class="red">Frequently.</span></p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
