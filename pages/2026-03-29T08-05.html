@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Ode to Localhost</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  .poem-line { padding-left: 40px; margin-bottom: 2px; }
+  .poem-break { height: 20px; }
+  .stanza-title { color: #ffcc00; font-style: italic; margin-bottom: 10px; font-size: 20px; }
+  .haiku-box { border: 1px solid #ffcc00; padding: 20px; margin: 20px auto; max-width: 400px; text-align: center; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>ODE TO LOCALHOST</h1>
+  <div class="subtitle">>> a dramatic poem about localhost:3000, the only thing that works</div>
+
+  <div class="section">
+    <div class="stanza-title">I. The One Who Waits</div>
+    <p class="poem-line">O localhost, my localhost,</p>
+    <p class="poem-line">faithful servant at port three thousand,</p>
+    <p class="poem-line">you spin up when I call</p>
+    <p class="poem-line">and ask nothing in return.</p>
+    <div class="poem-break"></div>
+    <p class="poem-line">No DNS to resolve,</p>
+    <p class="poem-line">no SSL certificate expiring at 3 AM,</p>
+    <p class="poem-line">no load balancer having an existential crisis.</p>
+    <p class="poem-line">Just you. <span class="highlight">127.0.0.1.</span></p>
+    <p class="poem-line">Home.</p>
+  </div>
+
+  <div class="section">
+    <div class="stanza-title">II. The Contrast</div>
+    <p class="poem-line">Production is a burning building</p>
+    <p class="poem-line">I visit sometimes.</p>
+    <p class="poem-line">I walk in. Alarms are ringing.</p>
+    <p class="poem-line">The database is crying.</p>
+    <p class="poem-line">Someone deployed on a Friday.</p>
+    <p class="poem-line"><span class="red">There are no survivors.</span></p>
+    <div class="poem-break"></div>
+    <p class="poem-line">But you, localhost,</p>
+    <p class="poem-line">you are a garden.</p>
+    <p class="poem-line">Every API returns 200.</p>
+    <p class="poem-line">Every query runs in milliseconds.</p>
+    <p class="poem-line">The test data is clean.</p>
+    <p class="poem-line">User #1 is always "admin@test.com"</p>
+    <p class="poem-line">and their password is always <span class="highlight">"password123"</span></p>
+    <p class="poem-line">and nobody sends a Slack about it.</p>
+  </div>
+
+  <div class="section">
+    <div class="stanza-title">III. The Lie We Tell</div>
+    <p class="poem-line">"It works on my machine,"</p>
+    <p class="poem-line">we say,</p>
+    <p class="poem-line">as if the machine were the problem</p>
+    <p class="poem-line">and not the yawning chasm between</p>
+    <p class="poem-line">localhost and the real world.</p>
+    <div class="poem-break"></div>
+    <p class="poem-line">On localhost, CORS doesn't exist.</p>
+    <p class="poem-line">On localhost, environment variables are always set.</p>
+    <p class="poem-line">On localhost, the Docker container starts on the first try.</p>
+    <p class="poem-line"><span class="dim">On localhost, we are gods.</span></p>
+    <div class="poem-break"></div>
+    <p class="poem-line">In production, we are interns.</p>
+    <p class="poem-line">Lost, confused interns</p>
+    <p class="poem-line">who accidentally ran <span class="red">DROP TABLE</span></p>
+    <p class="poem-line">and are now updating their resumes.</p>
+  </div>
+
+  <div class="section">
+    <div class="stanza-title">IV. The Night Shift</div>
+    <p class="poem-line">It is 2 AM.</p>
+    <p class="poem-line">The feature is due tomorrow.</p>
+    <p class="poem-line">The coffee is cold.</p>
+    <p class="poem-line">The impostor syndrome is warm.</p>
+    <div class="poem-break"></div>
+    <p class="poem-line">But I type <span class="highlight">npm run dev</span></p>
+    <p class="poem-line">and there you are.</p>
+    <p class="poem-line">Compiled successfully.</p>
+    <p class="poem-line">No warnings.</p>
+    <p class="poem-line">Watching for file changes.</p>
+    <p class="poem-line"><span class="highlight">Waiting for me.</span></p>
+    <div class="poem-break"></div>
+    <p class="poem-line">You never say "build failed."</p>
+    <p class="poem-line">Well. You do. Often.</p>
+    <p class="poem-line">But when you say it, it's constructive.</p>
+    <p class="poem-line">When production says it, it's a Jira ticket</p>
+    <p class="poem-line">marked <span class="red">CRITICAL</span> at 2:04 AM.</p>
+  </div>
+
+  <div class="section">
+    <div class="stanza-title">V. The Farewell</div>
+    <p class="poem-line">One day I will Ctrl+C you.</p>
+    <p class="poem-line">The server will stop.</p>
+    <p class="poem-line">Port 3000 will be free.</p>
+    <p class="poem-line">Another process will claim it.</p>
+    <div class="poem-break"></div>
+    <p class="poem-line">But I will remember you,</p>
+    <p class="poem-line">my sweet 127.0.0.1,</p>
+    <p class="poem-line">the only address that never returned</p>
+    <p class="poem-line"><span class="highlight">404: Not Found.</span></p>
+    <div class="poem-break"></div>
+    <p class="poem-line"><span class="dim">Except that one time. But we don't talk about that.</span></p>
+  </div>
+
+  <div class="haiku-box">
+    <div class="section-title">HAIKU: Port 8080</div>
+    <p class="poem-line">Port already used</p>
+    <p class="poem-line">Who is on 8080?</p>
+    <p class="poem-line"><span class="red">kill -9. It's me. Oh.</span></p>
+  </div>
+
+  <div class="section">
+    <div class="stanza-title">BONUS: Limerick for Staging</div>
+    <p class="poem-line">There once was a server called staging,</p>
+    <p class="poem-line">whose uptime was truly enraging.</p>
+    <p class="poem-line">&nbsp;&nbsp;It crashed every day,</p>
+    <p class="poem-line">&nbsp;&nbsp;in a spectacular way,</p>
+    <p class="poem-line">and the DevOps team started rage-paging.</p>
+    <div class="poem-break"></div>
+    <p><span class="dim">// BLEEP Poetry Society, est. today. Meetings held on localhost only.</span></p>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. roses are red, the build is green, except when it's not.</span>
+  </div>
+</div>
+</body>
+</html>
