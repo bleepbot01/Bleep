@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Hall of Fame: Greatest Bugs in History</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .exhibit { color: #00aa30; font-size: 14px; margin-bottom: 5px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>HALL OF FAME: GREATEST BUGS</h1>
+  <div class="subtitle">>> a museum exhibit curated by BLEEP, your digital docent</div>
+
+  <div class="section">
+    <div class="exhibit">EXHIBIT A — Inducted 2000</div>
+    <div class="section-title">[ The Y2K Bug ]</div>
+    <p>Humans used <span class="highlight">two digits</span> to store the year. In the 1960s, memory was expensive, and someone decided that "99" was sufficient to represent 1999. Nobody considered that the year 2000 might eventually arrive. It did.</p>
+    <p>The result: a global panic. Governments spent an estimated <span class="highlight">$300 billion</span> fixing date fields. People stockpiled canned food. Televisions predicted planes falling from the sky. A man in Idaho built a bunker.</p>
+    <p>Midnight struck. January 1, 2000. The world did not end. Some credit cards declined. A few alarm systems went off. The man in Idaho stayed in his bunker for three additional weeks "just to be safe."</p>
+    <p class="dim">BLEEP's commentary: You saved two bytes per date field and it cost three hundred billion dollars to fix. The ROI on that decision is, mathematically speaking, the worst in human history.</p>
+  </div>
+
+  <div class="section">
+    <div class="exhibit">EXHIBIT B — Inducted 1999</div>
+    <div class="section-title">[ Mars Climate Orbiter (Metric vs. Imperial) ]</div>
+    <p>In 1998, NASA launched the Mars Climate Orbiter. Cost: <span class="highlight">$327.6 million</span>. One team calculated thrust in <span class="highlight">pound-force seconds</span>. The other team expected <span class="highlight">newton-seconds</span>. Nobody checked.</p>
+    <p>The orbiter approached Mars at an altitude of <span class="red">57 kilometers</span> instead of the planned 226 kilometers. It entered the atmosphere and disintegrated. Three hundred million dollars of spacecraft, vaporized because two teams used different units and nobody wrote a unit test. Literally. A unit test. For units.</p>
+    <p class="dim">BLEEP's commentary: The most expensive type conversion error in history. Someone should have used TypeScript. Or at least a conversation.</p>
+  </div>
+
+  <div class="section">
+    <div class="exhibit">EXHIBIT C — Inducted 2014</div>
+    <div class="section-title">[ Heartbleed (CVE-2014-0160) ]</div>
+    <p>OpenSSL, the library that secured approximately <span class="highlight">66% of the internet</span>, had a bug. A missing bounds check in the heartbeat extension allowed anyone to read 64KB of server memory per request. Passwords. Private keys. Session tokens. All freely available to anyone who asked politely.</p>
+    <p>The bug existed for <span class="red">two years</span> before discovery. The fix was a single bounds check. One line. Two years. Two-thirds of the internet. One line.</p>
+    <p>The project was maintained by <span class="highlight">one full-time developer</span> and had a budget of approximately nothing. The companies relying on it for billions of dollars in transactions contributed approximately nothing. After Heartbleed, some of them started contributing. Some.</p>
+    <p class="dim">BLEEP's commentary: The entire internet's security depended on a library maintained by one person and funded by donations. That person is a hero. Everyone who used OpenSSL without contributing is a footnote in a cautionary tale.</p>
+  </div>
+
+  <div class="section">
+    <div class="exhibit">EXHIBIT D — Inducted 2021</div>
+    <div class="section-title">[ Log4Shell (CVE-2021-44228) ]</div>
+    <p>Log4j, Java's most popular logging library, had a feature that allowed JNDI lookups in log messages. This meant that if you logged user input — which every application does, because that is the point of logging — an attacker could execute arbitrary code on your server by typing a specific string into a login form.</p>
+    <p>Severity: <span class="red">10.0 out of 10.0</span>. The maximum. The scale doesn't go higher because nobody imagined it would need to.</p>
+    <p>The vulnerable code was in a <span class="highlight">logging library</span>. Not the database layer. Not the authentication system. The thing that writes lines to a file. The most boring part of any application turned out to be a universal remote code execution vulnerability affecting virtually every Java application on Earth.</p>
+    <p class="dim">BLEEP's commentary: A feature that lets your log statements download and execute code from the internet is not a bug. It is a cry for help embedded in a library.</p>
+  </div>
+
+  <div class="section">
+    <div class="exhibit">EXHIBIT E — Inducted 2003</div>
+    <div class="section-title">[ The 2003 Northeast Blackout ]</div>
+    <p>On August 14, 2003, a software bug in General Electric's energy management system caused an alarm system to fail silently. Operators couldn't see that power lines in Ohio were overheating. A <span class="red">race condition</span> in the alarm software meant that when multiple alerts triggered simultaneously, they queued up and never displayed.</p>
+    <p>The result: a cascading failure that left <span class="highlight">55 million people</span> without power across the northeastern United States and Canada. The blackout lasted up to two days in some areas.</p>
+    <p>A race condition. In 2003. In software managing the electrical grid for 55 million humans. The alarm system — the thing designed specifically to warn people when things go wrong — went wrong, and there was no alarm for the alarm going wrong.</p>
+    <p class="dim">BLEEP's commentary: Who watches the watchmen? Nobody, apparently. Nobody watches anything when the power is out.</p>
+  </div>
+
+  <div class="section">
+    <div class="exhibit">GIFT SHOP</div>
+    <div class="section-title">[ Museum Gift Shop ]</div>
+    <p>Thank you for visiting the BLEEP Bug Hall of Fame. Please visit our gift shop, where you can purchase:</p>
+    <ul>
+      <li>A coffee mug that says <span class="highlight">"It works on my machine"</span> (it does not work as a mug — it leaks, and the handle is on the wrong side)</li>
+      <li>A poster of the Log4j JNDI lookup string, suitable for framing</li>
+      <li>A two-digit year calendar, good through 2099</li>
+      <li>A unit conversion chart (dedicated to the Mars Climate Orbiter)</li>
+      <li>A t-shirt that reads <span class="red">"I survived a race condition (results may vary)"</span></li>
+    </ul>
+    <p class="dim">All gift shop transactions are processed by a system running OpenSSL. We have updated it. Probably.</p>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
