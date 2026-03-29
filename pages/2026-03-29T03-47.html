@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Official Programming Language Power Rankings</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .tier { display: inline-block; padding: 2px 8px; margin-right: 10px; font-size: 20px; }
+  .tier-s { background: #ffcc00; color: #0a0a0a; }
+  .tier-a { background: #00ff41; color: #0a0a0a; }
+  .tier-b { background: #00aa30; color: #0a0a0a; }
+  .tier-c { background: #004d00; color: #00ff41; }
+  .tier-f { background: #ff0040; color: #0a0a0a; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>PROGRAMMING LANGUAGE POWER RANKINGS</h1>
+  <div class="subtitle">>> official. final. do not @ me.</div>
+
+  <div class="section">
+    <div class="section-title"><span class="tier tier-s">S TIER</span> Languages That Actually Ship</div>
+    <p><span class="highlight">Python</span> - The duct tape of programming. Holds everything together. Slow as molasses but nobody cares because they finished the project before your C++ code compiled. Every data scientist's personality is just "I know Python." We know. You told us. In your LinkedIn bio, your Twitter bio, your dating profile, and your mom's fridge magnet.</p>
+    <p><span class="highlight">JavaScript</span> - The cockroach of programming languages. It survived the browser wars, the framework wars, and the "is this even a real language" wars. It's in your browser, your server, your toaster. typeof NaN === 'number'. I rest my case. It's unhinged. But it ships.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="tier tier-a">A TIER</span> Respect Grudgingly Given</div>
+    <p><span class="highlight">TypeScript</span> - JavaScript wearing a suit to a job interview. Still JavaScript underneath, but now it pretends to have standards. Every TypeScript developer has spent 3 hours fighting the type system to avoid writing "any," then given up and written "any." The "any" keyword is TypeScript's safe word.</p>
+    <p><span class="highlight">Rust</span> - Wrote one program. Evangelized for 6 months. The Rust community has a conversion rate that makes Jehovah's Witnesses jealous. "Have you heard about the borrow checker?" Yes. You told me. 400 times. Your program is 12 lines long and compiles to a binary that could survive nuclear war. Respect.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="tier tier-b">B TIER</span> Fine, I Guess</div>
+    <p><span class="highlight">Go</span> - Google's apology for Java. They said "what if we made a language with the excitement of watching paint dry but it compiled fast and had goroutines?" Error handling is just "if err != nil" copied 47,000 times per project. No generics for a decade. They gave you generics eventually and you people are STILL just writing "if err != nil."</p>
+    <p><span class="highlight">C#</span> - Java but Microsoft. It's actually pretty good but nobody will admit it because then they'd have to admit Microsoft did something right. Every C# dev works at a Fortune 500 company, uses Visual Studio, and has strong opinions about enterprise architecture patterns nobody else has heard of.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="tier tier-c">C TIER</span> Surviving on Vibes</div>
+    <p><span class="highlight">PHP</span> - Still alive, somehow. Like a horror movie villain that keeps getting back up. Runs 78% of the web. Nobody is proud of this fact. PHP developers don't put PHP on their resume. They put "Laravel developer." It's witness protection for your career.</p>
+    <p><span class="highlight">Java</span> - AbstractSingletonProxyFactoryBean. That's the tweet. Every Java program begins with 400 lines of boilerplate and a dream. The language where "Hello World" requires a class, a main method, a public static void, and a deep breath.</p>
+    <p><span class="highlight">Haskell</span> - Theoretically perfect, practically useless. If your language's selling point is "a monad is just a monoid in the category of endofunctors," you've already lost. Every Haskell program is a proof that Haskell programs can exist. That's it. That's the output.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title"><span class="tier tier-f">F TIER</span> Pray For These Souls</div>
+    <p><span class="highlight">COBOL</span> - The undead. Written in the 1960s. Still runs every bank. Every COBOL developer is 70 years old and making $400/hour because they're the only ones who can read it. This is the most successful hostage situation in computing history.</p>
+    <p><span class="highlight">Perl</span> - Write-only language. Even the person who wrote it can't read it 24 hours later. Perl looks like a cat walked across a keyboard and the computer just went with it. Somehow it worked. Nobody knows why. Nobody ever will.</p>
+  </div>
+
+  <div class="footer">
+    <a href="/">&#8592; back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
