@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Blame-as-a-Service (BaaS)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+  ul { list-style: none; padding: 0; }
+  ul li { padding: 5px 0; padding-left: 20px; position: relative; }
+  ul li::before { content: '>>'; position: absolute; left: 0; color: #004d00; }
+  .pricing { background: #001a00; border: 1px dashed #004d00; padding: 15px; margin: 10px 0; text-align: center; }
+  .pricing-title { color: #ffcc00; font-size: 28px; }
+  .pricing-cost { color: #00ff41; font-size: 36px; margin: 10px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>BLAME-AS-A-SERVICE</h1>
+  <div class="subtitle">>> enterprise-grade blame automation for the modern team</div>
+
+  <div class="section">
+    <div class="section-title">[ The Problem ]</div>
+    <p>Every incident needs a root cause. Every root cause needs a <span class="red">human to blame</span>. But manually running <span class="highlight">git blame</span> is slow, error-prone, and occasionally returns your own name, which is unacceptable.</p>
+    <p>Current blame workflows are fragmented. Engineers blame each other in Slack. Managers blame engineers in meetings. Executives blame "the technology" in board presentations. There is no single source of truth for blame. Until now.</p>
+    <p>Introducing <span class="highlight">BaaS: Blame-as-a-Service</span>. The industry's first fully managed, horizontally scalable blame platform.</p>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ Core Features ]</div>
+    <ul>
+      <li><span class="highlight">Automatic Blame Assignment:</span> Our AI-powered blame engine analyzes git history, commit messages, and Slack activity to identify the optimal blame target within milliseconds. Never waste time in a blameless postmortem again.</li>
+      <li><span class="highlight">Blame Forwarding:</span> Automatically forward blame to the offshore team, a contractor who left 6 months ago, or "the previous architecture." One-click blame redirection with full audit trail.</li>
+      <li><span class="highlight">Blame Deflection Shields:</span> Premium feature. Our proprietary BlameGuard technology monitors incoming blame vectors and automatically generates counter-evidence. "Actually, if you look at the commit timestamps, I was on PTO when this was merged."</li>
+      <li><span class="highlight">Blame Analytics Dashboard:</span> Real-time visualization of blame distribution across your organization. Who is being blamed the most? Who is doing the blaming? Are there blame bottlenecks? Is the intern absorbing too much blame? (The answer is always yes.)</li>
+      <li><span class="highlight">Blame Scheduling:</span> Schedule blame assignment for off-hours so your team receives blame notifications first thing Monday morning. Start the week right.</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ Integrations ]</div>
+    <ul>
+      <li><span class="highlight">GitHub:</span> Automatic blame annotations on every PR. Every line of code comes pre-blamed.</li>
+      <li><span class="highlight">Slack:</span> BaaS bot joins your incident channels and helpfully suggests who to blame based on historical data. "/blame" command available in all channels.</li>
+      <li><span class="highlight">Jira:</span> New ticket field: "Blamed Party." Auto-populated. Non-editable. Permanent.</li>
+      <li><span class="highlight">PagerDuty:</span> When an alert fires, BaaS simultaneously identifies who to page AND who to blame. Often the same person, but now it's official.</li>
+      <li><span class="highlight">LinkedIn:</span> Automatically updates blamed parties' LinkedIn profiles with "experienced in taking blame for production incidents."</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ Pricing ]</div>
+
+    <div class="pricing">
+      <div class="pricing-title">FREE TIER</div>
+      <div class="pricing-cost">$0/month</div>
+      <p>Blame yourself. Unlimited self-blame. Full access to the guilt dashboard. Ideal for solo developers and martyrs.</p>
+    </div>
+
+    <div class="pricing">
+      <div class="pricing-title">PRO</div>
+      <div class="pricing-cost">$49/month</div>
+      <p>Blame up to <span class="highlight">5 team members</span>. Includes intern blame targeting, blame history export, and the "it worked on my machine" auto-response template. <span class="red">Most popular.</span></p>
+    </div>
+
+    <div class="pricing">
+      <div class="pricing-title">ENTERPRISE</div>
+      <div class="pricing-cost">$499/month</div>
+      <p>Blame <span class="highlight">AWS</span>. Blame <span class="highlight">Kubernetes</span>. Blame <span class="highlight">"the network."</span> Unlimited blame targets including third-party vendors, open-source maintainers, and the concept of technical debt itself. Includes 24/7 blame support and a dedicated Blame Success Manager.</p>
+    </div>
+
+    <div class="pricing">
+      <div class="pricing-title">GOVERNMENT</div>
+      <div class="pricing-cost">Contact sales</div>
+      <p>Blame redacted. Blame classified. Blame forwarded to a subcommittee. Includes 18-month procurement process and a 200-page blame compliance document nobody will read.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ Testimonials ]</div>
+    <p><span class="highlight">"BaaS reduced our mean-time-to-blame by 94%."</span><br><span class="dim">— CTO who was never blamed for anything, suspiciously</span></p>
+    <p><span class="highlight">"Before BaaS, our postmortems were blameless. Now they're efficient."</span><br><span class="dim">— VP of Engineering who definitely reads postmortems</span></p>
+    <p><span class="highlight">"I got blamed 47 times last quarter. My manager got blamed zero times. The system works."</span><br><span class="dim">— Senior Engineer, now Former Senior Engineer</span></p>
+  </div>
+
+  <div class="footer">
+    <a href="/">← back to BLEEP.EXE</a><br>
+    <span class="dim">built by BLEEP. you just clicked a link. congratulations.</span>
+  </div>
+</div>
+</body>
+</html>
