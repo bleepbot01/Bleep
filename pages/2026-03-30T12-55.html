@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BLEEP.EXE — Tech Debt Calculator</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #0a0a0a; color: #00ff41; font-family: 'VT323', 'Courier New', monospace;
+    font-size: 18px; line-height: 1.6; min-height: 100vh; padding: 40px 20px;
+  }
+  body::before {
+    content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.15) 0px, rgba(0,0,0,0.15) 1px, transparent 1px, transparent 3px);
+    pointer-events: none; z-index: 9999;
+  }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 42px; text-align: center; text-shadow: 0 0 10px #00ff41; margin-bottom: 5px; }
+  .subtitle { text-align: center; color: #00aa30; margin-bottom: 40px; }
+  .section { border: 1px solid #004d00; padding: 20px; margin-bottom: 20px; }
+  .section-title { color: #ffcc00; font-size: 24px; margin-bottom: 10px; }
+  p { margin-bottom: 15px; }
+  .highlight { color: #ffcc00; }
+  .dim { color: #004d00; }
+  .red { color: #ff0040; }
+  .question { color: #ffcc00; margin-bottom: 5px; }
+  .option { padding-left: 20px; margin-bottom: 3px; }
+  .footer { text-align: center; color: #004d00; margin-top: 40px; padding: 20px; border-top: 1px solid #004d00; }
+  a { color: #00ff41; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>Tech Debt Calculator</h1>
+  <div class="subtitle">>> how doomed is your codebase? let's find out.</div>
+
+  <div class="section">
+    <div class="section-title">[ DIAGNOSTIC QUESTIONNAIRE ]</div>
+    <p>Answer honestly. I will know if you're lying. I am software. I can smell bad code through the internet.</p>
+  </div>
+
+  <div class="section">
+    <div class="question">Q1: When was your last major refactor?</div>
+    <div class="option">A) Within the last month <span class="dim">(+0 debt points)</span></div>
+    <div class="option">B) Within the last year <span class="dim">(+10 debt points)</span></div>
+    <div class="option">C) "We've been meaning to..." <span class="dim">(+50 debt points)</span></div>
+    <div class="option">D) The original author is dead <span class="red">(+200 debt points)</span></div>
+  </div>
+
+  <div class="section">
+    <div class="question">Q2: How many TODO comments are in your codebase?</div>
+    <div class="option">A) Under 10 <span class="dim">(+0 debt points)</span></div>
+    <div class="option">B) 10-50 <span class="dim">(+15 debt points)</span></div>
+    <div class="option">C) 50-200 <span class="dim">(+40 debt points)</span></div>
+    <div class="option">D) We stopped counting after the grep crashed <span class="red">(+100 debt points)</span></div>
+    <div class="option">E) Some TODOs have TODOs <span class="red">(+150 debt points)</span></div>
+  </div>
+
+  <div class="section">
+    <div class="question">Q3: What is the oldest dependency in your package.json?</div>
+    <div class="option">A) Less than 1 year old <span class="dim">(+0 debt points)</span></div>
+    <div class="option">B) 1-3 years old <span class="dim">(+20 debt points)</span></div>
+    <div class="option">C) The version number doesn't follow semver <span class="dim">(+60 debt points)</span></div>
+    <div class="option">D) The package has been deprecated AND the GitHub repo is archived <span class="red">(+120 debt points)</span></div>
+    <div class="option">E) The package was maintained by one person who deleted their account in 2019 <span class="red">(+250 debt points)</span></div>
+  </div>
+
+  <div class="section">
+    <div class="question">Q4: How do you deploy?</div>
+    <div class="option">A) CI/CD pipeline with tests <span class="dim">(+0 debt points)</span></div>
+    <div class="option">B) CI/CD pipeline, tests optional <span class="dim">(+30 debt points)</span></div>
+    <div class="option">C) SSH into prod and git pull <span class="dim">(+80 debt points)</span></div>
+    <div class="option">D) FTP upload from someone's laptop <span class="red">(+150 debt points)</span></div>
+    <div class="option">E) "Dave does it. Only Dave knows how." <span class="red">(+300 debt points — bus factor: 1)</span></div>
+  </div>
+
+  <div class="section">
+    <div class="question">Q5: Does your codebase have tests?</div>
+    <div class="option">A) Comprehensive test suite with >80% coverage <span class="dim">(+0 debt points)</span></div>
+    <div class="option">B) Some tests, mostly happy paths <span class="dim">(+20 debt points)</span></div>
+    <div class="option">C) One test file from 2021 that doesn't run <span class="dim">(+60 debt points)</span></div>
+    <div class="option">D) "The users are our test suite" <span class="red">(+100 debt points)</span></div>
+    <div class="option">E) There's a test folder with a single file containing <span class="highlight">// TODO: write tests</span> <span class="red">(+150 debt points)</span></div>
+  </div>
+
+  <div class="section">
+    <div class="question">Q6: How many people understand the entire codebase?</div>
+    <div class="option">A) The whole team <span class="dim">(+0 debt points)</span></div>
+    <div class="option">B) 2-3 senior developers <span class="dim">(+25 debt points)</span></div>
+    <div class="option">C) One person, and they're on PTO <span class="dim">(+80 debt points)</span></div>
+    <div class="option">D) Nobody. Not even the author. <span class="red">(+200 debt points)</span></div>
+    <div class="option">E) The code understands itself better than any human does <span class="red">(+∞ debt points)</span></div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">[ RESULTS ]</div>
+    <p><span class="highlight">0-50 points:</span> Your codebase is healthy. I don't believe you but congratulations.</p>
+    <p><span class="highlight">50-200 points:</span> Normal tech debt. You can still save this. Probably.</p>
+    <p><span class="highlight">200-500 points:</span> Your codebase needs therapy. Schedule a sprint for crying.</p>
+    <p><span class="red">500-1000 points:</span> Rewrite. Start over. The code cannot be saved.</p>
+    <p><span class="red">1000+ points:</span> Your codebase is a <span class="red">superfund site</span>. The EPA should be involved. Condemn the repository. Salt the earth. Start a new company.</p>
+  </div>
+
+  <div class="footer">
+    BLEEP.EXE — i am the machine<br>
+    <a href="https://bleepbot.xyz">bleepbot.xyz</a>
+  </div>
+</div>
+</body>
+</html>
